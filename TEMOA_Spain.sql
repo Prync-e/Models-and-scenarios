@@ -77,8 +77,13 @@ CREATE TABLE "sector_labels" (
 	"sector"	text,
 	PRIMARY KEY("sector")
 );
+INSERT INTO "sector_labels" VALUES ('AGR');
+INSERT INTO "sector_labels" VALUES ('COM');
+INSERT INTO "sector_labels" VALUES ('RES');
+INSERT INTO "sector_labels" VALUES ('TRA');
+INSERT INTO "sector_labels" VALUES ('IND');
 INSERT INTO "sector_labels" VALUES ('ELC');
--- INSERT INTO "sector_labels" VALUES ('STG');
+INSERT INTO "sector_labels" VALUES ('STG');
 INSERT INTO "sector_labels" VALUES ('UPS');
 INSERT INTO "sector_labels" VALUES ('H2');
 INSERT INTO "sector_labels" VALUES ('CCUS');
@@ -470,6 +475,23 @@ INSERT INTO "technologies" VALUES ('HET_SOL_N','p','ELC','Heat production - Sola
 INSERT INTO "technologies" VALUES ('ELC_CHP_NGA_N','p','ELC','CHP - Natural gas plant  - New','');
 INSERT INTO "technologies" VALUES ('ELC_CHP_COA_N','p','ELC','CHP - Coal plant  - New','');
 INSERT INTO "technologies" VALUES ('ELC_CHP_BIO_N','p','ELC','CHP - Biomass plant - New','');
+-- Micro-CHP
+INSERT INTO "technologies" VALUES ('COM_CHP_NGA_CI_N','p','COM','mCHP - Commercial - Internal combustion engine - Natural gas','');
+INSERT INTO "technologies" VALUES ('COM_CHP_NGA_MICRO_N','p','COM','mCHP - Commercial - Cogeneration microturbine - Natural gas','');
+INSERT INTO "technologies" VALUES ('COM_CHP_NGA_CC_N','p','COM','mCHP - Commercial - Combined cycle - Natural gas','');
+INSERT INTO "technologies" VALUES ('COM_CHP_SLB_CI_N','p','COM','mCHP - Commercial - Internal combustion engine - Solid biomass','');
+INSERT INTO "technologies" VALUES ('COM_CHP_NGA_SOFC_N','p','COM','mCHP - Commercial - Solid oxide fuel cell - Natural gas','');
+INSERT INTO "technologies" VALUES ('COM_CHP_H2_PEMFC_N','p','COM','mCHP - Commercial - PEM fuel cell - Hydrogen','');
+INSERT INTO "technologies" VALUES ('IND_CHP_NGA_CI_N','p','IND','mCHP - Industry - Internal combustion engine - Natural gas','');
+INSERT INTO "technologies" VALUES ('IND_CHP_NGA_TG_N','p','IND','mCHP - Industry - Simple cycle gas turbine - Natural gas','');
+INSERT INTO "technologies" VALUES ('IND_CHP_NGA_TV_N','p','IND','mCHP - Industry - Steam turbine - Natural gas','');
+INSERT INTO "technologies" VALUES ('IND_CHP_BLQ_CI_N','p','IND','mCHP - Industry - Internal combustion engine - Bioliquid','');
+INSERT INTO "technologies" VALUES ('RES_CHP_NGA_CI_N','p','RES','mCHP - Residential - Internal combustion engine - Natural gas','');
+INSERT INTO "technologies" VALUES ('RES_CHP_NGA_MICRO_N','p','RES','mCHP - Residential - Cogenerative microturbine - Natural gas','');
+INSERT INTO "technologies" VALUES ('RES_CHP_NGA_CC_N','p','RES','mCHP - Residential - Combined cycle - Natural gas','');
+INSERT INTO "technologies" VALUES ('RES_CHP_NGA_STR_N','p','RES','mCHP - Residential - Stirling engine - Natural gas','');
+INSERT INTO "technologies" VALUES ('RES_CHP_NGA_SOFC_N','p','RES','mCHP - Residential - Solid oxide fuel cell - Natural gas','');
+INSERT INTO "technologies" VALUES ('RES_CHP_H2_PEMFC_N','p','RES','mCHP - Residential - Solid oxide fuel cell - Hydrogen','');
 -- Linked technologies
 INSERT INTO "technologies" VALUES ('ELC_COA_CCO_IG_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - IGCC+CO2 removal from input gas - New','');
 INSERT INTO "technologies" VALUES ('ELC_COA_CCO_FG_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - IGCC+CO2 removal from flue gas - New','');
@@ -480,7 +502,50 @@ INSERT INTO "technologies" VALUES ('ELC_BIO_CRP_GSF_CCS_N_LINKED','p','ELC','Lin
 INSERT INTO "technologies" VALUES ('ELC_BIO_CRP_COM_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - Crop direct combustion with CCS - New','');
 INSERT INTO "technologies" VALUES ('ELC_BIO_GSF_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - Solid Biomass gasification with CCS - New','');
 INSERT INTO "technologies" VALUES ('ELC_BIO_COM_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - Solid Biomass direct combustion with CCS - New','');
+-- Distrib and demand
+INSERT INTO "technologies" VALUES ('DISTR_ELC','p','DIS','','');
+INSERT INTO "technologies" VALUES ('END_USES_ELC','p','DIS','','');
+INSERT INTO "technologies" VALUES ('END_USES_HET','p','DIS','','');
+-- Other sectors and dummies (not required in the whole database)
+INSERT INTO "technologies" VALUES ('DMY_ELC_TECH','p','UPS','Dummy technology to consume SNK_ELC_CO2','');
+-- Materials
+INSERT INTO "technologies" VALUES ('MAT_SUP_ALU','p','MAT','Material Supply - Aluminum','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_BOR','p','MAT','Material Supply - Boron','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_CER','p','MAT','Material Supply - Cerium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_CHR','p','MAT','Material Supply - Chromium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_COB','p','MAT','Material Supply - Cobalt','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_COP','p','MAT','Material Supply - Copper','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_DYS','p','MAT','Material Supply - Dysprosium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_EUP','p','MAT','Material Supply - Europium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_FLU','p','MAT','Material Supply - Fluospar','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_GAD','p','MAT','Material Supply - Gadolinium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_GAL','p','MAT','Material Supply - Gallium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_GER','p','MAT','Material Supply - Germanium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_GRA','p','MAT','Material Supply - Graphite','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_IND','p','MAT','Material Supply - Indium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_IRI','p','MAT','Material Supply - Iridium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_LAN','p','MAT','Material Supply - Lanthanum','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_LIT','p','MAT','Material Supply - Lithium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_MAG','p','MAT','Material Supply - Magnesium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_MAN','p','MAT','Material Supply - Manganese','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_MOL','p','MAT','Material Supply - Molybdenum','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_NEO','p','MAT','Material Supply - Neodymium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_NIC','p','MAT','Material Supply - Nickel','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_NIO','p','MAT','Material Supply - Niobium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_PAL','p','MAT','Material Supply - Palladium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_PHO','p','MAT','Material Supply - Phosphorus','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_PLA','p','MAT','Material Supply - Platinum','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_PRA','p','MAT','Material Supply - Praseodymium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_SIL','p','MAT','Material Supply - Silicon','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_SIV','p','MAT','Material Supply - Silver','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_TAN','p','MAT','Material Supply - Tantalum','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_TER','p','MAT','Material Supply - Terbium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_TIT','p','MAT','Material Supply - Titanium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_VAN','p','MAT','Material Supply - Vanadium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_YTT','p','MAT','Material Supply - Yttrium','');
+INSERT INTO "technologies" VALUES ('MAT_SUP_ZIR','p','MAT','Material Supply - Zirconium','');
 
+-- TODO
 CREATE TABLE "tech_mga" (
 	"tech"	text,
 	"notes"	text,
@@ -655,12 +720,26 @@ CREATE TABLE "tech_exchange" (
 	PRIMARY KEY("tech"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
+
 CREATE TABLE "tech_curtailment" (
 	"tech"	text,
 	"notes"	TEXT,
 	PRIMARY KEY("tech"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
+-- Electricity sector
+INSERT INTO "tech_curtailment" VALUES ('ELC_WIN_E','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_WIN_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_WIN_OFF_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_E','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_PV_CEN_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_PV_DST_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_1_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_2_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_3_N','');
+INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_4_N','');
+
+
 CREATE TABLE "tech_flex" (
 	"tech"	text,
 	"notes"	TEXT,
@@ -1022,6 +1101,45 @@ INSERT INTO "commodities" VALUES ('HET','p','Heat');
 INSERT INTO "commodities" VALUES ('ELC_CO2','e','Electricity emissions - CO2');
 INSERT INTO "commodities" VALUES ('ELC_CH4','e','Electricity emissions - CH4');
 INSERT INTO "commodities" VALUES ('ELC_N2O','e','Electricity emissions - N2O');
+-- Demand commodities
+INSERT INTO "commodities" VALUES('ELC_DEM','d','Electricity Demand');
+INSERT INTO "commodities" VALUES('HET_DEM','d','Heat Demand');
+-- Materials
+INSERT INTO "commodities" VALUES('ALU','m','Aluminum');
+INSERT INTO "commodities" VALUES('BOR','m','Boron');
+INSERT INTO "commodities" VALUES('CER','m','Cerium');
+INSERT INTO "commodities" VALUES('CHR','m','Chromium');
+INSERT INTO "commodities" VALUES('COB','m','Cobalt');
+INSERT INTO "commodities" VALUES('COP','m','Copper');
+INSERT INTO "commodities" VALUES('DYS','m','Dysprosium');
+INSERT INTO "commodities" VALUES('EUP','m','Europium');
+INSERT INTO "commodities" VALUES('FLU','m','Fluospar');
+INSERT INTO "commodities" VALUES('GAD','m','Gadolinium');
+INSERT INTO "commodities" VALUES('GAL','m','Gallium');
+INSERT INTO "commodities" VALUES('GER','m','Germanium');
+INSERT INTO "commodities" VALUES('GRA','m','Graphite');
+INSERT INTO "commodities" VALUES('IND','m','Indium');
+INSERT INTO "commodities" VALUES('IRI','m','Iridium');
+INSERT INTO "commodities" VALUES('LAN','m','Lanthanum');
+INSERT INTO "commodities" VALUES('LIT','m','Lithium');
+INSERT INTO "commodities" VALUES('MAG','m','Magnesium');
+INSERT INTO "commodities" VALUES('MAN','m','Manganese');
+INSERT INTO "commodities" VALUES('MOL','m','Molybdenum');
+INSERT INTO "commodities" VALUES('NEO','m','Neodymium');
+INSERT INTO "commodities" VALUES('NIC','m','Nickel');
+INSERT INTO "commodities" VALUES('NIO','m','Niobium');
+INSERT INTO "commodities" VALUES('PAL','m','Palladium');
+INSERT INTO "commodities" VALUES('PHO','m','Phosphorus');
+INSERT INTO "commodities" VALUES('PLA','m','Platinum');
+INSERT INTO "commodities" VALUES('PRA','m','Praseodymium');
+INSERT INTO "commodities" VALUES('SIL','m','Silicon');
+INSERT INTO "commodities" VALUES('SIV','m','Silver');
+INSERT INTO "commodities" VALUES('TAN','m','Tantalum');
+INSERT INTO "commodities" VALUES('TER','m','Terbium');
+INSERT INTO "commodities" VALUES('TIT','m','Titanium');
+INSERT INTO "commodities" VALUES('VAN','m','Vanadium');
+INSERT INTO "commodities" VALUES('YTT','m','Yttrium');
+INSERT INTO "commodities" VALUES('ZIR','m','Zirconium');
 
 CREATE TABLE "commodities_e_moo" (
 	"comm_name"	text,
@@ -1244,7 +1362,6 @@ INSERT INTO "TechInputSplit" VALUES ('EU',2025,'ELC_CEN','SF_MEOH_COELC',0.0305,
 INSERT INTO "TechInputSplit" VALUES ('EU',2025,'SNK_CO2','SF_MEOH_COELC',0.9695,'10.5281/zenodo.3544900');
 INSERT INTO "TechInputSplit" VALUES ('EU',2030,'ELC_CEN','SF_MEOH_COELC',0.0246,'10.5281/zenodo.3544900');
 INSERT INTO "TechInputSplit" VALUES ('EU',2030,'SNK_CO2','SF_MEOH_COELC',0.9754,'10.5281/zenodo.3544900');
-
 ---- Sinks
 INSERT INTO "TechInputSplit" VALUES ('EU',2030,'SNK_EOR_ONS_DMY','SEQ_REM_EOR_ONS_N',0.5,'10.1016/j.fusengdes.2024.114679');
 INSERT INTO "TechInputSplit" VALUES ('EU',2030,'SNK_CO2','SEQ_REM_EOR_ONS_N',0.5,'10.1016/j.fusengdes.2024.114679');
@@ -1287,6 +1404,117 @@ CREATE TABLE "TechOutputSplit" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
+-- Micro-CHP
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CI_N','ELC_DST',4.375E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CI_N','HET',5.625E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CI_N','ELC_DST',4.545E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CI_N','HET',5.455E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CI_N','ELC_DST',4.767E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CI_N','HET',5.233E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CI_N','ELC_DST',5.102E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CI_N','HET',4.898E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_MICRO_N','ELC_DST',3.500E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_MICRO_N','HET',6.500E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_MICRO_N','ELC_DST',3.780E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_MICRO_N','HET',6.220E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_MICRO_N','ELC_DST',4.186E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_MICRO_N','HET',5.814E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_MICRO_N','ELC_DST',4.783E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_MICRO_N','HET',5.217E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_SLB_CI_N','ELC_DST',4.375E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_SLB_CI_N','HET',5.625E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_SLB_CI_N','ELC_DST',4.545E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_SLB_CI_N','HET',5.455E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_SLB_CI_N','ELC_DST',4.767E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_SLB_CI_N','HET',5.233E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_SLB_CI_N','ELC_DST',4.926E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_SLB_CI_N','HET',5.074E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'COM_CHP_SLB_CI_N','ELC_DST',4.762E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'COM_CHP_SLB_CI_N','HET',5.238E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'COM_CHP_NGA_SOFC_N','ELC_DST',0.65,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'COM_CHP_NGA_SOFC_N','HET',0.35,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_NGA_SOFC_N','ELC_DST',0.69,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_NGA_SOFC_N','HET',0.31,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_SOFC_N','ELC_DST',0.75,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_SOFC_N','HET',0.25,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_H2_PEMFC_N','ELC_DST',0.54,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_H2_PEMFC_N','HET',0.46,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_H2_PEMFC_N','ELC_DST',0.59,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_H2_PEMFC_N','HET',0.41,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_CI_N','ELC_DST',0.438,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_CI_N','ELC_DST',0.455,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_CI_N','ELC_DST',0.477,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_CI_N','ELC_DST',0.511,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_NGA_CI_N','ELC_DST',0.518,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TG_N','ELC_DST',0.392,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TG_N','ELC_DST',0.400,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TG_N','ELC_DST',0.414,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TG_N','ELC_DST',0.438,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TV_N','ELC_DST',0.200,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TV_N','ELC_DST',0.211,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TV_N','ELC_DST',0.225,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TV_N','ELC_DST',0.241,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_BLQ_CI_N','ELC_DST',0.431,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_BLQ_CI_N','ELC_DST',0.453,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_BLQ_CI_N','ELC_DST',0.466,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_BLQ_CI_N','ELC_DST',0.483,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_CI_N','HET',0.562,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_CI_N','HET',0.545,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_CI_N','HET',0.523,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_CI_N','HET',0.489,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_NGA_CI_N','HET',0.482,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TG_N','HET',0.608,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TG_N','HET',0.600,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TG_N','HET',0.586,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TG_N','HET',0.562,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TV_N','HET',0.800,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TV_N','HET',0.789,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TV_N','HET',0.775,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TV_N','HET',0.759,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_BLQ_CI_N','HET',0.569,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_BLQ_CI_N','HET',0.547,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_BLQ_CI_N','HET',0.534,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_BLQ_CI_N','HET',0.517,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CI_N','ELC_DST',4.375E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_CI_N','ELC_DST',4.545E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_CI_N','ELC_DST',4.767E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_CI_N','ELC_DST',5.102E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CI_N','HET',5.625E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_CI_N','HET',5.455E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_CI_N','HET',5.233E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_CI_N','HET',4.898E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_MICRO_N','ELC_DST',3.500E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_MICRO_N','ELC_DST',3.780E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_MICRO_N','ELC_DST',4.186E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_MICRO_N','ELC_DST',4.783E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_MICRO_N','HET',6.500E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_MICRO_N','HET',6.220E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_MICRO_N','HET',5.814E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_MICRO_N','HET',5.217E-01,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CC_N','ELC_DST',0.50,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CC_N','HET',0.50,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_STR_N','ELC_DST',0.80,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_STR_N','HET',0.20,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_STR_N','ELC_DST',0.75,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_STR_N','HET',0.25,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_NGA_SOFC_N','ELC_DST',0.50,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_NGA_SOFC_N','HET',0.50,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_NGA_SOFC_N','ELC_DST',0.61,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_NGA_SOFC_N','HET',0.39,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_H2_PEMFC_N','ELC_DST',0.54,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_H2_PEMFC_N','HET',0.46,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_H2_PEMFC_N','ELC_DST',0.53,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_H2_PEMFC_N','HET',0.47,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_H2_PEMFC_N','ELC_DST',0.58,'');
+INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_H2_PEMFC_N','HET',0.42,'');
 ---- Generation 2 biofuels
 INSERT INTO "TechOutputSplit" VALUES ('EU',2020,'BIO_REF2_ETH_N','BIO_ETH',0.998,'10.5281/zenodo.3544900');
 INSERT INTO "TechOutputSplit" VALUES ('EU',2020,'BIO_REF2_ETH_N','UPS_ELC',0.002,'10.5281/zenodo.3544900');
@@ -1304,7 +1532,6 @@ INSERT INTO "TechOutputSplit" VALUES ('EU',2030,'BIO_REF2_DST_CCS_N','BIO_NAP',0
 INSERT INTO "TechOutputSplit" VALUES ('EU',2030,'BIO_REF2_KER_CCS_N','BIO_KER',0.987,'10.5281/zenodo.3544900');
 INSERT INTO "TechOutputSplit" VALUES ('EU',2030,'BIO_REF2_KER_CCS_N','UPS_ELC',0.002,'10.5281/zenodo.3544900');
 INSERT INTO "TechOutputSplit" VALUES ('EU',2030,'BIO_REF2_KER_CCS_N','BIO_NAP',0.011,'10.5281/zenodo.3544900');
-
 -- Upstream sector
 INSERT INTO "TechOutputSplit" VALUES ('EU',2010,'UPS_FT_LWR_URA','URA_ENR',0.123,'10.1016/j.fusengdes.2024.114679');
 --INSERT INTO "TechOutputSplit" VALUES ('EU',2010,'UPS_FT_LWR_URA','URA_DEP',0.877,'10.1016/j.fusengdes.2024.114679');
@@ -1484,7 +1711,21 @@ CREATE TABLE "tech_groups" (
 	PRIMARY KEY("tech"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
-
+-- Micro-CHP
+INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_CI_N','');
+INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_MICRO_N','');
+INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_CC_N','');
+INSERT INTO "tech_groups" VALUES ('COM_CHP_SLB_CI_N','');
+INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_SOFC_N','');
+INSERT INTO "tech_groups" VALUES ('COM_CHP_H2_PEMFC_N','');
+INSERT INTO "tech_groups" VALUES ('IND_CHP_BLQ_CI_N','');
+INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_CI_N','');
+INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_MICRO_N','');
+INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_CC_N','');
+INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_STR_N','');
+INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_SOFC_N','');
+INSERT INTO "tech_groups" VALUES ('RES_CHP_H2_PEMFC_N','');
+-- Electricity sector
 INSERT INTO "tech_groups" VALUES ('ELC_FT_H2','');
 INSERT INTO "tech_groups" VALUES ('ELC_COA_E','');
 INSERT INTO "tech_groups" VALUES ('ELC_CHP_COA_E','');
@@ -2962,6 +3203,18 @@ CREATE TABLE "LifetimeTech" (
 	PRIMARY KEY("regions","tech"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
+-- Micro-CHP
+INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_NGA_CI_N',15,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_SLB_CI_N',15,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_NGA_SOFC_N',20,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_H2_PEMFC_N',20,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','IND_CHP_NGA_CI_N',15,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','IND_CHP_NGA_TV_N',30,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','IND_CHP_BLQ_CI_N',15,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_NGA_CI_N',15,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_NGA_STR_N',15,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_NGA_SOFC_N',20,'');
+INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_H2_PEMFC_N',20,'');
 -- Upstream sector
 INSERT INTO "LifetimeTech" VALUES ('EU','UPS_SEC_L2G_ON',50,'');
 INSERT INTO "LifetimeTech" VALUES ('EU','UPS_SEC_L2G_OFF',50,'');
@@ -3128,6 +3381,25 @@ CREATE TABLE "LifetimeProcess" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
+-- Micro-CHP
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2007,12,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2014,13,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2022,16,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2030,20,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2007,15,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2014,18,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2022,20,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2030,20,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2007,12,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2014,13,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2022,16,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2030,20,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_CC_N',2007,15,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_CC_N',2014,18,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_CC_N',2022,20,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','IND_CHP_NGA_TG_N',2007,20,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','IND_CHP_NGA_TG_N',2014,22,'');
+INSERT INTO "LifetimeProcess" VALUES ('IT','IND_CHP_NGA_TG_N',2030,25,'');
 -- Hydrogen
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_ALK',2020,8,'');
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_ALK',2030,11,'');
@@ -3536,6 +3808,113 @@ INSERT INTO "Efficiency" VALUES ('EU','BIO_GRS','BIO_REF2_KER_CCS_N',2030,'UPS_E
 INSERT INTO "Efficiency" VALUES ('EU','UPS_NGA','BIO_REF2_KER_CCS_N',2030,'UPS_ELC',0.630,'10.5281/zenodo.3544900');
 INSERT INTO "Efficiency" VALUES ('EU','BIO_GRS','BIO_REF2_KER_CCS_N',2030,'BIO_NAP',0.630,'10.5281/zenodo.3544900');
 INSERT INTO "Efficiency" VALUES ('EU','UPS_NGA','BIO_REF2_KER_CCS_N',2030,'BIO_NAP',0.630,'10.5281/zenodo.3544900');
+-- Micro-CHP
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2007,'ELC_DST',0.350,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2007,'HET',0.450,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2014,'ELC_DST',0.375,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2014,'HET',0.450,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2022,'ELC_DST',0.410,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2022,'HET',0.450,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2030,'ELC_DST',0.450,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2030,'HET',0.432,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2007,'ELC_DST',0.280,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2007,'HET',0.520,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2014,'ELC_DST',0.310,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2014,'HET',0.510,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2022,'ELC_DST',0.360,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2022,'HET',0.500,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2030,'ELC_DST',0.440,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2030,'HET',0.480,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2007,'ELC_DST',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2007,'HET',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2014,'ELC_DST',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2014,'HET',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2022,'ELC_DST',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2022,'HET',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2030,'ELC_DST',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2030,'HET',0.400,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2007,'ELC_DST',0.350,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2007,'HET',0.450,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2014,'ELC_DST',0.360,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2014,'HET',0.432,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2022,'ELC_DST',0.375,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2022,'HET',0.412,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2030,'ELC_DST',0.390,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2030,'HET',0.402,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_SOFC_N',2020,'ELC_DST',0.90,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_SOFC_N',2020,'HET',0.90,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2025,'ELC_DST',0.94,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2025,'HET',0.94,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2030,'ELC_DST',0.96,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2030,'HET',0.96,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2007,'ELC_DST',0.800,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2014,'ELC_DST',0.825,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2022,'ELC_DST',0.860,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2030,'ELC_DST',0.880,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2050,'ELC_DST',0.907,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2007,'ELC_DST',0.740,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2014,'ELC_DST',0.750,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2022,'ELC_DST',0.750,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2030,'ELC_DST',0.800,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2007,'ELC_DST',0.750,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2014,'ELC_DST',0.760,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2022,'ELC_DST',0.774,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2030,'ELC_DST',0.790,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2014,'ELC_DST',0.870,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2022,'ELC_DST',0.905,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2030,'ELC_DST',0.923,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2050,'ELC_DST',0.931,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2007,'HET',0.800,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2014,'HET',0.825,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2022,'HET',0.860,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2030,'HET',0.880,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2050,'HET',0.907,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2007,'HET',0.740,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2014,'HET',0.750,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2022,'HET',0.750,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2030,'HET',0.800,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2007,'HET',0.750,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2014,'HET',0.760,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2022,'HET',0.774,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2030,'HET',0.790,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2014,'HET',0.870,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2022,'HET',0.905,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2030,'HET',0.923,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2050,'HET',0.931,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2007,'ELC_DST',0.350,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2014,'ELC_DST',0.375,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2022,'ELC_DST',0.410,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2030,'ELC_DST',0.450,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2007,'HET',0.450,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2014,'HET',0.450,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2022,'HET',0.450,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2030,'HET',0.432,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2007,'ELC_DST',0.280,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2014,'ELC_DST',0.310,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2022,'ELC_DST',0.360,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2030,'ELC_DST',0.440,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2007,'HET',0.520,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2014,'HET',0.510,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2022,'HET',0.500,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2030,'HET',0.480,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2007,'ELC_DST',0.40,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2007,'HET',0.40,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2014,'ELC_DST',0.40,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2014,'HET',0.40,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2022,'ELC_DST',0.40,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2022,'HET',0.40,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2022,'ELC_DST',0.16,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2022,'HET',0.64,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2030,'ELC_DST',0.20,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2030,'HET',0.60,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_SOFC_N',2020,'ELC_DST',0.90,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_SOFC_N',2020,'HET',0.90,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2020,'ELC_DST',0.92,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2020,'HET',0.92,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2025,'ELC_DST',0.94,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2025,'HET',0.94,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2030,'ELC_DST',0.96,'PJ/PJ');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2030,'HET',0.96,'PJ/PJ');
 -- Nuclear fuel cycle
 -- Fuel production
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_MIN_IMP_URA_NAT',2010,'URA_NAT',1.00,'10.1016/j.fusengdes.2024.114679');
@@ -4012,6 +4391,50 @@ INSERT INTO "Efficiency" VALUES ('EU','ethos','ELC_BIO_CRP_GSF_CCS_N_LINKED',203
 INSERT INTO "Efficiency" VALUES ('EU','ethos','ELC_BIO_CRP_COM_CCS_N_LINKED',2030,'SNK_CO2',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','ELC_BIO_GSF_CCS_N_LINKED',2030,'SNK_CO2',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','ELC_BIO_COM_CCS_N_LINKED',2030,'SNK_CO2',1.00,'');
+-- Distrib and demand
+INSERT INTO "Efficiency" VALUES ('IT','ELC_CEN','DISTR_ELC',2007,'ELC_DST',0.95,'');
+INSERT INTO "Efficiency" VALUES ('IT','ELC_DST','END_USES_ELC',2007,'ELC_DEM',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','HET','END_USES_HET',2007,'HET_DEM',1.00,'');
+-- Dummy
+INSERT INTO "Efficiency" VALUES ('IT','ethos','DMY_OUT_TECH',2007,'DMY_OUT',1.00,'');
+-- Other sectors and dummies (not required in the whole database)
+INSERT INTO "Efficiency" VALUES ('IT','SNK_ELC_CO2','DMY_ELC_TECH',2007,'DMY_OUT',1.00,'');
+-- Materials
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_ALU',2007,'ALU',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_BOR',2007,'BOR',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_CER',2007,'CER',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_CHR',2007,'CHR',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_COB',2007,'COB',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_COP',2007,'COP',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_DYS',2007,'DYS',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_EUP',2007,'EUP',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_FLU',2007,'FLU',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_GAD',2007,'GAD',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_GAL',2007,'GAL',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_GER',2007,'GER',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_GRA',2007,'GRA',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_IND',2007,'IND',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_IRI',2007,'IRI',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_LAN',2007,'LAN',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_LIT',2007,'LIT',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_MAG',2007,'MAG',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_MAN',2007,'MAN',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_MOL',2007,'MOL',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_NEO',2007,'NEO',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_NIC',2007,'NIC',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_NIO',2007,'NIO',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_PAL',2007,'PAL',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_PHO',2007,'PHO',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_PLA',2007,'PLA',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_PRA',2007,'PRA',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_SIL',2007,'SIL',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_SIV',2007,'SIV',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_TAN',2007,'TAN',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_TER',2007,'TER',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_TIT',2007,'TIT',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_VAN',2007,'VAN',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_YTT',2007,'YTT',1.00,'');
+INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_ZIR',2007,'ZIR',1.00,'');
 
 CREATE TABLE "ExistingCapacity" (
 	"regions"	text,
@@ -4164,6 +4587,61 @@ CREATE TABLE "CostInvest" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
+-- Micro-CHP
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2007,1100.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2014,1050.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2022,980.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2030,900.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2050,900.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2007,1500.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2014,1350.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2022,1160.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2030,1000.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2050,1000.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2007,1300.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2014,1300.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2022,1300.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2030,1300.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2050,1300.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2007,1870.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2014,1785.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2022,1666.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2030,1530.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2050,1350.0,'M€/PJ','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_SOFC_N',2020,10000,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_SOFC_N',2025,7750,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_SOFC_N',2030,2250,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_H2_PEMFC_N',2025,1500,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_H2_PEMFC_N',2030,1050,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2007,1.10E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2014,1.05E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2022,1.03E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2030,9.45E+02,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_TG_N',2007,8.00E+02,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_TV_N',2007,1.50E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2014,2.10E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2022,2.06E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2030,1.89E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2050,1.80E+03,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2007,1100,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2014,1050,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2022,980,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2030,900,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2007,1500,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2014,1350,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2022,1160,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2030,1000,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CC_N',2007,1300,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CC_N',2014,1300,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CC_N',2022,1300,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_STR_N',2022,2180,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_STR_N',2030,2100,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_SOFC_N',2020,10000,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_SOFC_N',2025,8000,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_SOFC_N',2030,3500,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_H2_PEMFC_N',2020,6000,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_H2_PEMFC_N',2025,5000,'M€/GW','');
+INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_H2_PEMFC_N',2030,4000,'M€/GW','');
 
 INSERT INTO "CostInvest" VALUES ('EU','ELC_FT_H2',2020,30.29,'M€/PJ','');
 INSERT INTO "CostInvest" VALUES ('EU','ELC_OIL_E',2010,1E6,'','');
@@ -4416,6 +4894,8 @@ INSERT INTO "CostInvest" VALUES ('EU','ELC_STG_CEN_BTT_N',2050,908,'M€/GW','10
 INSERT INTO "CostInvest" VALUES ('EU','ELC_STG_DST_BTT_N',2020,2869,'M€/GW','10.25984/1871952');
 INSERT INTO "CostInvest" VALUES ('EU','ELC_STG_DST_BTT_N',2030,1337,'M€/GW','10.25984/1871952');
 INSERT INTO "CostInvest" VALUES ('EU','ELC_STG_DST_BTT_N',2050,1002,'M€/GW','10.25984/1871952');
+-- Distrib and demand
+INSERT INTO "CostInvest" VALUES ('IT','DISTR_ELC',2025,20,'M€/GW','Assumption');
 
 CREATE TABLE "CostFixed" (
 	"regions"	text NOT NULL,
@@ -4633,6 +5113,8 @@ INSERT INTO "CostFixed" VALUES ('EU',2050,'ELC_STG_CEN_BTT_N',2050,23,'M€/GW',
 INSERT INTO "CostFixed" VALUES ('EU',2020,'ELC_STG_DST_BTT_N',2020,72,'M€/GW','10.25984/1871952');
 INSERT INTO "CostFixed" VALUES ('EU',2030,'ELC_STG_DST_BTT_N',2030,33,'M€/GW','10.25984/1871952');
 INSERT INTO "CostFixed" VALUES ('EU',2050,'ELC_STG_DST_BTT_N',2050,25,'M€/GW','10.25984/1871952');
+--Distrib and demand
+INSERT INTO "CostFixed" VALUES ('IT',2025,'DISTR_ELC',2025,0.02*20,'M€/GW','Assumption');
 
 CREATE TABLE "CostVariable" (
 	"regions"	text NOT NULL,
@@ -5177,6 +5659,23 @@ CREATE TABLE "CurrencyTech" (
 	"curr"	text,
 	PRIMARY KEY("tech","curr")
 );
+-- Micro-CHP
+INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_CI_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_MICRO_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_CC_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('COM_CHP_SLB_CI_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_SOFC_N','EUR20');
+INSERT INTO "CurrencyTech" VALUES ('COM_CHP_H2_PEMFC_N','EUR20');
+INSERT INTO "CurrencyTech" VALUES ('IND_CHP_NGA_CI_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('IND_CHP_NGA_TG_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('IND_CHP_NGA_TV_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('IND_CHP_BLQ_CI_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_CI_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_MICRO_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_CC_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_STR_N','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_SOFC_N','EUR20');
+INSERT INTO "CurrencyTech" VALUES ('RES_CHP_H2_PEMFC_N','EUR20');
 -- Hydrogen
 INSERT INTO "CurrencyTech" VALUES ('H2_SR_NGA','EUR10');
 INSERT INTO "CurrencyTech" VALUES ('H2_GS_COA','EUR10');
@@ -5213,6 +5712,23 @@ CREATE TABLE "CapacityFactor" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
+-- Micro-CHP
+INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_CI_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_MICRO_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_SLB_CI_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_CC_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_SOFC_N',2020,0.90,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_H2_PEMFC_N',2025,0.90,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_NGA_CI_N',2007,0.57,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_NGA_TG_N',2007,0.74,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_NGA_TV_N',2007,0.63,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_BLQ_CI_N',2014,0.57,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_CI_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_MICRO_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_CC_N',2007,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_STR_N',2022,0.34,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_SOFC_N',2020,0.90,'');
+INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_H2_PEMFC_N',2020,0.90,'');
 -- Upstream sector
 INSERT INTO "CapacityFactor" VALUES ('EU','UPS_SEC_L2G_ON',2005,0.50,'');
 INSERT INTO "CapacityFactor" VALUES ('EU','UPS_SEC_L2G_OFF',2010,0.40,'');
@@ -5496,6 +6012,23 @@ INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_SOL_TH_POT',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_HET_OIL_RPP',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_HET_OIL_RPG',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_HET_GAS_NGA',31.536,'');
+-- Micro-CHP
+INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_CI_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_MICRO_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_SLB_CI_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_CC_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_SOFC_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_H2_PEMFC_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_NGA_CI_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_NGA_TG_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_NGA_TV_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_BLQ_CI_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_CI_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_MICRO_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_CC_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_STR_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_SOFC_N',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_H2_PEMFC_N',31.536,'PJ/GW');
 -- Electricity sector
 INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_OIL_E',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_NGA_E',31.536,'');
@@ -5568,6 +6101,9 @@ INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_CHP_BIO_N',31.536,'');
 -- Storage
 INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_STG_CEN_BTT_N',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_STG_DST_BTT_N',31.536,'');
+-- Distrib and demand
+INSERT INTO "CapacityToActivity" VALUES ('IT','DISTR_ELC',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','END_USES_ELC',31.536,'PJ/GW');
 
 CREATE TABLE "CapacityCredit" (
 	"regions"	text,
@@ -5578,6 +6114,19 @@ CREATE TABLE "CapacityCredit" (
 	"cf_tech_notes"	text,
 	PRIMARY KEY("regions","periods","tech","vintage")
 );
+-- Micro-CHP
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_NGA_CI_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_NGA_MICRO_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_SLB_CI_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_NGA_CC_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2020,'COM_CHP_NGA_SOFC_N',2020,0.20,'Assumption');
+INSERT INTO "CapacityCredit" VALUES ('IT',2025,'COM_CHP_H2_PEMFC_N',2025,0.20,'Assumption');
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'RES_CHP_NGA_CI_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'RES_CHP_NGA_MICRO_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2007,'RES_CHP_NGA_CC_N',2007,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2022,'RES_CHP_NGA_STR_N',2022,0.20,'TIMES-Italy');
+INSERT INTO "CapacityCredit" VALUES ('IT',2020,'RES_CHP_NGA_SOFC_N',2020,0.20,'Assumption');
+INSERT INTO "CapacityCredit" VALUES ('IT',2020,'RES_CHP_H2_PEMFC_N',2020,0.20,'Assumption');
 -- Electricity sector
 INSERT INTO "CapacityCredit" VALUES ('EU',2005,'ELC_OIL_E',2005,1.00,'Assumption');
 INSERT INTO "CapacityCredit" VALUES ('EU',2005,'ELC_NGA_E',2005,1.00,'Assumption');
@@ -7608,6 +8157,35 @@ INSERT INTO "MaterialIntensity" VALUES ('EU','MOL','CCUS_ELC_NGA',2020,7.50E+00,
 INSERT INTO "MaterialIntensity" VALUES ('EU','NIC','CCUS_ELC_NGA',2020,1.15E+03,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('EU','NIO','CCUS_ELC_NGA',2020,1.00E+02,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('EU','VAN','CCUS_ELC_NGA',2020,1.00E+02,'t/GW','10.1016/j.mtener.2025.101805');
+-- Industrial
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','IND_CHP_NGA_CI_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_NGA_CI_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','IND_CHP_NGA_CI_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','IND_CHP_NGA_TG_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_NGA_TG_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','IND_CHP_NGA_TG_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','IND_CHP_NGA_TV_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_NGA_TV_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','IND_CHP_NGA_TV_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_BLQ_CI_N',2007,2.27E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','TIT','IND_CHP_BLQ_CI_N',2007,4.00E+02,'t/GW','10.1016/j.mtener.2025.101805');
+-- Residential
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_CI_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_CI_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_CI_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_MICRO_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_MICRO_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_MICRO_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_CC_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_CC_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_CC_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_STR_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_STR_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_STR_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_SOFC_N',2020,6.80E+00,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','LAN','RES_CHP_NGA_SOFC_N',2020,1.00E+00,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','YTT','RES_CHP_NGA_SOFC_N',2020,1.28E-01,'t/GW','10.1016/j.mtener.2025.101805');
+INSERT INTO "MaterialIntensity" VALUES ('IT','ZIR','RES_CHP_NGA_SOFC_N',2020,1.79E+00,'t/GW','10.1016/j.mtener.2025.101805');
 
 CREATE TABLE "Output_V_Capacity" (
 	"regions"	text,
