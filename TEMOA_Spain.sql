@@ -545,7 +545,6 @@ INSERT INTO "technologies" VALUES ('MAT_SUP_VAN','p','MAT','Material Supply - Va
 INSERT INTO "technologies" VALUES ('MAT_SUP_YTT','p','MAT','Material Supply - Yttrium','');
 INSERT INTO "technologies" VALUES ('MAT_SUP_ZIR','p','MAT','Material Supply - Zirconium','');
 
--- TODO
 CREATE TABLE "tech_mga" (
 	"tech"	text,
 	"notes"	text,
@@ -1155,7 +1154,7 @@ CREATE TABLE "MultiObjectiveSlacked" (
 	"notes"					text
 );
 
--- TODO
+-- Energy supply risk
 CREATE TABLE "EnergyCommodityConcentrationIndex" (
     "regions"                   text,
     "comm_name"                 text,
@@ -3412,6 +3411,7 @@ INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_SOEC',2030,5,'');
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_SOEC',2050,10,'');
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_AEM',2050,10,'');
 
+-- Controllare bilanci EUROSTAT versione excel
 CREATE TABLE "Efficiency" (
 	"regions"	text,
 	"input_comm"	text,
@@ -6825,36 +6825,7 @@ CREATE TABLE "MaxResource" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	PRIMARY KEY("regions","tech")
 );
--- Import, mining and primary renewable resources
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_BCO',144619.242,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_BCO',971161.167,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HCO',54680.751,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_HCO',367330.132,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HOIL_1',96114.274,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HOIL_2',57668.565,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HOIL_3',38445.710,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_GRO_HOIL_1',47646.307,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_GRO_HOIL_2',28587.784,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_GRO_HOIL_3',19058.523,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_HOIL_1',192811.853,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_HOIL_2',115687.112,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_HOIL_3',77124.741,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HSAN_1',478.300,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HSAN_2',478.300,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_HSAN_3',239.150,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_REC_HSAN_1',972.543,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_REC_HSAN_2',972.543,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_REC_HSAN_3',486.272,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_NGA_1',66717.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_NGA_2',88956.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_LOC_NGA_3',66717.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_GRO_NGA_1',73529.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_GRO_NGA_2',98038.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_GRO_NGA_3',73529.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_NGA_1',108475.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_NGA_2',144633.00,'PJ','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "MaxResource" VALUES ('EU','UPS_DIS_NGA_3',108475.00,'PJ','10.1016/j.fusengdes.2024.114679');
--- CCUS
+-- CCUS - tenere se troviamo dati sulla spagna
 INSERT INTO "MaxResource" VALUES ('EU','SEQ_SNK_EOR_ONS_N',10400000,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "MaxResource" VALUES ('EU','SEQ_SNK_EOR_OFF_N',8600000,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "MaxResource" VALUES ('EU','SEQ_SNK_DOF_ONS_N',7500000,'','10.1016/j.fusengdes.2024.114679');
@@ -6882,25 +6853,6 @@ CREATE TABLE "MinCapacity" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods")
 );
--- Upstream sector
-INSERT INTO "MinCapacity" VALUES ('EU',2010,'BIO_REF1_ETHAMIDE_E',2246.45*0.027,'PJ','10.5281/zenodo.3544900');
-INSERT INTO "MinCapacity" VALUES ('EU',2010,'BIO_REF1_ETHSUG_E',1311.08*0.027,'PJ','10.5281/zenodo.3544900');
-INSERT INTO "MinCapacity" VALUES ('EU',2015,'BIO_REF1_ETHAMIDE_E',0.0,'','10.5281/zenodo.3544900');
-INSERT INTO "MinCapacity" VALUES ('EU',2015,'BIO_REF1_ETHSUG_E',0.0,'','10.5281/zenodo.3544900');
-INSERT INTO "MinCapacity" VALUES ('EU',2010,'UPS_SEC_L2G_ON',5542.792,'PJ','10.1007/978-3-030-86884-0_2');
-INSERT INTO "MinCapacity" VALUES ('EU',2015,'UPS_SEC_L2G_ON',6211.022,'PJ','10.1007/978-3-030-86884-0_2');
-INSERT INTO "MinCapacity" VALUES ('EU',2020,'UPS_SEC_L2G_ON',6886.286,'PJ','10.1007/978-3-030-86884-0_2');
---INSERT INTO "MinCapacity" VALUES ('EU',2025,'UPS_SEC_L2G_ON',0,'PJ','10.1007/978-3-030-86884-0_2');
-INSERT INTO "MinCapacity" VALUES ('EU',2010,'UPS_SEC_L2G_OFF',316.530,'PJ','10.1007/978-3-030-86884-0_2');
-INSERT INTO "MinCapacity" VALUES ('EU',2015,'UPS_SEC_L2G_OFF',582.064,'PJ','10.1007/978-3-030-86884-0_2');
-INSERT INTO "MinCapacity" VALUES ('EU',2020,'UPS_SEC_L2G_OFF',582.064,'PJ','10.1007/978-3-030-86884-0_2');
---INSERT INTO "MinCapacity" VALUES ('EU',2025,'UPS_SEC_L2G_OFF',0,'PJ','10.1007/978-3-030-86884-0_2');
-INSERT INTO "MinCapacity" VALUES ('EU',2025,'UPS_SEC_L2G_ON',7987.107,'PJ','Gas Infrastructure Europe, 2023');
-INSERT INTO "MinCapacity" VALUES ('EU',2030,'UPS_SEC_L2G_ON',8637.752,'PJ','Gas Infrastructure Europe, 2023');
-INSERT INTO "MinCapacity" VALUES ('EU',2035,'UPS_SEC_L2G_ON',0,'PJ','Gas Infrastructure Europe, 2023');
-INSERT INTO "MinCapacity" VALUES ('EU',2025,'UPS_SEC_L2G_OFF',2625.441,'PJ','Gas Infrastructure Europe, 2023');
-INSERT INTO "MinCapacity" VALUES ('EU',2030,'UPS_SEC_L2G_OFF',3198.712,'PJ','Gas Infrastructure Europe, 2023');
-INSERT INTO "MinCapacity" VALUES ('EU',2035,'UPS_SEC_L2G_OFF',0,'PJ','Gas Infrastructure Europe, 2023');
 
 CREATE TABLE "MaxCapacity" (
 	"regions"	text,
@@ -7413,6 +7365,7 @@ INSERT INTO "MaxActivity" VALUES ('EU',2050,'SEQ_SNK_AFF_2_N',66667,'','');
 INSERT INTO "MaxActivity" VALUES ('EU',2050,'SEQ_SNK_AFF_3_N',126983,'','');
 INSERT INTO "MaxActivity" VALUES ('EU',2050,'SEQ_SNK_AFF_4_N',134047,'','');
 
+-- Tenere se non tornano i dati storici
 CREATE table "MinActivity" (
 	"regions"	text,
 	"periods"	integer,
