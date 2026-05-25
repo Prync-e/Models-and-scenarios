@@ -21,11 +21,15 @@ CREATE TABLE "time_periods" (
 	PRIMARY KEY("t_periods"),
 	FOREIGN KEY("flag") REFERENCES "time_period_labels"("t_period_labels")
 );
+-- Existing
 INSERT INTO "time_periods" VALUES (2005,'e');
+-- Check with data
+INSERT INTO "time_periods" VALUES (2008,'f');
 INSERT INTO "time_periods" VALUES (2010,'f');
 INSERT INTO "time_periods" VALUES (2015,'f');
 INSERT INTO "time_periods" VALUES (2020,'f');
 INSERT INTO "time_periods" VALUES (2025,'f');
+-- Future
 INSERT INTO "time_periods" VALUES (2030,'f');
 INSERT INTO "time_periods" VALUES (2035,'f');
 INSERT INTO "time_periods" VALUES (2040,'f');
@@ -110,27 +114,18 @@ CREATE TABLE "technologies" (
 );
 -- Import/export
 INSERT INTO "technologies" VALUES ('UPS_IMP_ELC_AFR','p','UPS','Import/Export - Electricity from Africa','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_ELC_OEE','p','UPS','Import/Export - Electricity from Other Eastern European countries','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_ELC_RUS','p','UPS','Import/Export - Electricity from Russia','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_ELC_MEA','p','UPS','Import/Export - Electricity from Middle Eastern Asian countries','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_ELC_CAC','p','UPS','Import/Export - Electricity from Central Asian countries','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_USA','p','UPS','Import/Export - Oil from USA','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_CAN','p','UPS','Import/Export - Oil from Canada','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_MEX','p','UPS','Import/Export - Oil from Mexico','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_OLA','p','UPS','Import/Export - Oil from Other Latin American countries','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_BRA','p','UPS','Import/Export - Oil from Brazil','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_RUS','p','UPS','Import/Export - Oil from Russia','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_MEA','p','UPS','Import/Export - Oil from Other Eastern European countries','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_AFR','p','UPS','Import/Export - Oil from Africa','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_CHI','p','UPS','Import/Export - Oil from China','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_JPN','p','UPS','Import/Export - Oil from Japan','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_ODA','p','UPS','Import/Export - Oil from Other developed Asian countries','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_OIL_FEE','p','UPS','Import/Export - Oil feedstock','');
 INSERT INTO "technologies" VALUES ('UPS_EXP_OIL','p','UPS','Import/Export - Oil export','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_GAS_PIP_AFR','p','UPS','Import/Export - Gas from Africa','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_GAS_PIP_RUS','p','UPS','Import/Export - Gas from Russia','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_GAS_PIP_CAC','p','UPS','Import/Export - Gas from Central Asian countries (Azerbaijan - White Stream)','');
-INSERT INTO "technologies" VALUES ('UPS_IMP_GAS_PIP_MEA','p','UPS','Import/Export - Gas from Central Asian countries (Eastmed - Israel)','');
 INSERT INTO "technologies" VALUES ('UPS_EXP_GAS','p','UPS','Import/Export - Natural gas export','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_GAS_LNG_AFR','p','UPS','Import/Export - LNG from Africa','');
 INSERT INTO "technologies" VALUES ('UPS_IMP_GAS_LNG_MEA','p','UPS','Import/Export - LNG from Middle East Asia','');
@@ -475,23 +470,6 @@ INSERT INTO "technologies" VALUES ('HET_SOL_N','p','ELC','Heat production - Sola
 INSERT INTO "technologies" VALUES ('ELC_CHP_NGA_N','p','ELC','CHP - Natural gas plant  - New','');
 INSERT INTO "technologies" VALUES ('ELC_CHP_COA_N','p','ELC','CHP - Coal plant  - New','');
 INSERT INTO "technologies" VALUES ('ELC_CHP_BIO_N','p','ELC','CHP - Biomass plant - New','');
--- Micro-CHP
-INSERT INTO "technologies" VALUES ('COM_CHP_NGA_CI_N','p','COM','mCHP - Commercial - Internal combustion engine - Natural gas','');
-INSERT INTO "technologies" VALUES ('COM_CHP_NGA_MICRO_N','p','COM','mCHP - Commercial - Cogeneration microturbine - Natural gas','');
-INSERT INTO "technologies" VALUES ('COM_CHP_NGA_CC_N','p','COM','mCHP - Commercial - Combined cycle - Natural gas','');
-INSERT INTO "technologies" VALUES ('COM_CHP_SLB_CI_N','p','COM','mCHP - Commercial - Internal combustion engine - Solid biomass','');
-INSERT INTO "technologies" VALUES ('COM_CHP_NGA_SOFC_N','p','COM','mCHP - Commercial - Solid oxide fuel cell - Natural gas','');
-INSERT INTO "technologies" VALUES ('COM_CHP_H2_PEMFC_N','p','COM','mCHP - Commercial - PEM fuel cell - Hydrogen','');
-INSERT INTO "technologies" VALUES ('IND_CHP_NGA_CI_N','p','IND','mCHP - Industry - Internal combustion engine - Natural gas','');
-INSERT INTO "technologies" VALUES ('IND_CHP_NGA_TG_N','p','IND','mCHP - Industry - Simple cycle gas turbine - Natural gas','');
-INSERT INTO "technologies" VALUES ('IND_CHP_NGA_TV_N','p','IND','mCHP - Industry - Steam turbine - Natural gas','');
-INSERT INTO "technologies" VALUES ('IND_CHP_BLQ_CI_N','p','IND','mCHP - Industry - Internal combustion engine - Bioliquid','');
-INSERT INTO "technologies" VALUES ('RES_CHP_NGA_CI_N','p','RES','mCHP - Residential - Internal combustion engine - Natural gas','');
-INSERT INTO "technologies" VALUES ('RES_CHP_NGA_MICRO_N','p','RES','mCHP - Residential - Cogenerative microturbine - Natural gas','');
-INSERT INTO "technologies" VALUES ('RES_CHP_NGA_CC_N','p','RES','mCHP - Residential - Combined cycle - Natural gas','');
-INSERT INTO "technologies" VALUES ('RES_CHP_NGA_STR_N','p','RES','mCHP - Residential - Stirling engine - Natural gas','');
-INSERT INTO "technologies" VALUES ('RES_CHP_NGA_SOFC_N','p','RES','mCHP - Residential - Solid oxide fuel cell - Natural gas','');
-INSERT INTO "technologies" VALUES ('RES_CHP_H2_PEMFC_N','p','RES','mCHP - Residential - Solid oxide fuel cell - Hydrogen','');
 -- Linked technologies
 INSERT INTO "technologies" VALUES ('ELC_COA_CCO_IG_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - IGCC+CO2 removal from input gas - New','');
 INSERT INTO "technologies" VALUES ('ELC_COA_CCO_FG_CCS_N_LINKED','p','ELC','Linked technologies - Electricity - IGCC+CO2 removal from flue gas - New','');
@@ -580,26 +558,17 @@ CREATE TABLE "tech_imports" (
 	PRIMARY KEY("tech")
 );
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_ELC_AFR','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_ELC_OEE','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_ELC_RUS','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_ELC_MEA','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_ELC_CAC','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_USA','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_CAN','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_MEX','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_OLA','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_BRA','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_RUS','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_MEA','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_AFR','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_CHI','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_JPN','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_ODA','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_OIL_FEE','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_PIP_AFR','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_PIP_RUS','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_PIP_CAC','');
-INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_PIP_MEA','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_LNG_AFR','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_LNG_MEA','');
 INSERT INTO "tech_imports" VALUES ('UPS_IMP_GAS_LNG_GLB','');
@@ -738,7 +707,6 @@ INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_2_N','');
 INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_3_N','');
 INSERT INTO "tech_curtailment" VALUES ('ELC_SOL_CSP_4_N','');
 
-
 CREATE TABLE "tech_flex" (
 	"tech"	text,
 	"notes"	TEXT,
@@ -800,11 +768,9 @@ INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_CAN','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_MEX','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_OLA','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_BRA','');
-INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_RUS','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_MEA','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_AFR','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_CHI','');
-INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_JPN','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_ODA','');
 INSERT INTO "tech_annual" VALUES ('UPS_IMP_OIL_FEE','');
 INSERT INTO "tech_annual" VALUES ('UPS_EXP_OIL','');
@@ -1190,6 +1156,7 @@ CREATE TABLE "TechnologyMaterialSupplyRisk" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 
+-- TODO (chiedere)
 CREATE TABLE "TechInputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -1391,6 +1358,7 @@ INSERT INTO "TechInputSplit" VALUES ('EU',2010,'UPS_NUC_HET_LWR_UOX','ELC_NUC_FI
 INSERT INTO "TechInputSplit" VALUES ('EU',2010,'UPS_NUC_HET_LWR_UOX','ELC_NUC_FIS_LWR_N',0.500,'10.1016/j.fusengdes.2024.114679');
 INSERT INTO "TechInputSplit" VALUES ('EU',2020,'UPS_NUC_HET_LWR_UOX','ELC_NUC_FIS_EPR_N',0.500,'10.1016/j.fusengdes.2024.114679');
 
+-- TODO (chiedere)
 CREATE TABLE "TechOutputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -1403,117 +1371,6 @@ CREATE TABLE "TechOutputSplit" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
--- Micro-CHP
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CI_N','ELC_DST',4.375E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CI_N','HET',5.625E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CI_N','ELC_DST',4.545E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CI_N','HET',5.455E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CI_N','ELC_DST',4.767E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CI_N','HET',5.233E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CI_N','ELC_DST',5.102E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CI_N','HET',4.898E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_MICRO_N','ELC_DST',3.500E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_MICRO_N','HET',6.500E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_MICRO_N','ELC_DST',3.780E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_MICRO_N','HET',6.220E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_MICRO_N','ELC_DST',4.186E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_MICRO_N','HET',5.814E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_MICRO_N','ELC_DST',4.783E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_MICRO_N','HET',5.217E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CC_N','ELC_DST',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_CC_N','HET',5.000E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_SLB_CI_N','ELC_DST',4.375E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'COM_CHP_SLB_CI_N','HET',5.625E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_SLB_CI_N','ELC_DST',4.545E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'COM_CHP_SLB_CI_N','HET',5.455E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_SLB_CI_N','ELC_DST',4.767E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'COM_CHP_SLB_CI_N','HET',5.233E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_SLB_CI_N','ELC_DST',4.926E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_SLB_CI_N','HET',5.074E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'COM_CHP_SLB_CI_N','ELC_DST',4.762E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'COM_CHP_SLB_CI_N','HET',5.238E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'COM_CHP_NGA_SOFC_N','ELC_DST',0.65,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'COM_CHP_NGA_SOFC_N','HET',0.35,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_NGA_SOFC_N','ELC_DST',0.69,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_NGA_SOFC_N','HET',0.31,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_SOFC_N','ELC_DST',0.75,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_NGA_SOFC_N','HET',0.25,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_H2_PEMFC_N','ELC_DST',0.54,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'COM_CHP_H2_PEMFC_N','HET',0.46,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_H2_PEMFC_N','ELC_DST',0.59,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'COM_CHP_H2_PEMFC_N','HET',0.41,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_CI_N','ELC_DST',0.438,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_CI_N','ELC_DST',0.455,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_CI_N','ELC_DST',0.477,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_CI_N','ELC_DST',0.511,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_NGA_CI_N','ELC_DST',0.518,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TG_N','ELC_DST',0.392,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TG_N','ELC_DST',0.400,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TG_N','ELC_DST',0.414,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TG_N','ELC_DST',0.438,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TV_N','ELC_DST',0.200,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TV_N','ELC_DST',0.211,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TV_N','ELC_DST',0.225,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TV_N','ELC_DST',0.241,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_BLQ_CI_N','ELC_DST',0.431,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_BLQ_CI_N','ELC_DST',0.453,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_BLQ_CI_N','ELC_DST',0.466,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_BLQ_CI_N','ELC_DST',0.483,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_CI_N','HET',0.562,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_CI_N','HET',0.545,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_CI_N','HET',0.523,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_CI_N','HET',0.489,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_NGA_CI_N','HET',0.482,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TG_N','HET',0.608,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TG_N','HET',0.600,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TG_N','HET',0.586,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TG_N','HET',0.562,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'IND_CHP_NGA_TV_N','HET',0.800,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_NGA_TV_N','HET',0.789,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_NGA_TV_N','HET',0.775,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_NGA_TV_N','HET',0.759,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'IND_CHP_BLQ_CI_N','HET',0.569,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'IND_CHP_BLQ_CI_N','HET',0.547,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'IND_CHP_BLQ_CI_N','HET',0.534,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2050,'IND_CHP_BLQ_CI_N','HET',0.517,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CI_N','ELC_DST',4.375E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_CI_N','ELC_DST',4.545E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_CI_N','ELC_DST',4.767E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_CI_N','ELC_DST',5.102E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CI_N','HET',5.625E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_CI_N','HET',5.455E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_CI_N','HET',5.233E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_CI_N','HET',4.898E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_MICRO_N','ELC_DST',3.500E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_MICRO_N','ELC_DST',3.780E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_MICRO_N','ELC_DST',4.186E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_MICRO_N','ELC_DST',4.783E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_MICRO_N','HET',6.500E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2014,'RES_CHP_NGA_MICRO_N','HET',6.220E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_MICRO_N','HET',5.814E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_MICRO_N','HET',5.217E-01,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CC_N','ELC_DST',0.50,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'RES_CHP_NGA_CC_N','HET',0.50,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_STR_N','ELC_DST',0.80,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2022,'RES_CHP_NGA_STR_N','HET',0.20,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_STR_N','ELC_DST',0.75,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_NGA_STR_N','HET',0.25,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_NGA_SOFC_N','ELC_DST',0.50,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_NGA_SOFC_N','HET',0.50,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_NGA_SOFC_N','ELC_DST',0.61,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_NGA_SOFC_N','HET',0.39,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_H2_PEMFC_N','ELC_DST',0.54,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2020,'RES_CHP_H2_PEMFC_N','HET',0.46,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_H2_PEMFC_N','ELC_DST',0.53,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2025,'RES_CHP_H2_PEMFC_N','HET',0.47,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_H2_PEMFC_N','ELC_DST',0.58,'');
-INSERT INTO "TechOutputSplit" VALUES ('IT',2030,'RES_CHP_H2_PEMFC_N','HET',0.42,'');
 ---- Generation 2 biofuels
 INSERT INTO "TechOutputSplit" VALUES ('EU',2020,'BIO_REF2_ETH_N','BIO_ETH',0.998,'10.5281/zenodo.3544900');
 INSERT INTO "TechOutputSplit" VALUES ('EU',2020,'BIO_REF2_ETH_N','UPS_ELC',0.002,'10.5281/zenodo.3544900');
@@ -1702,7 +1559,6 @@ CREATE TABLE "PlanningReserveMargin" (
 	PRIMARY KEY("regions"),
 	FOREIGN KEY("regions") REFERENCES "regions"
 );
---INSERT INTO "PlanningReserveMargin" VALUES ('EU',0.15);
 
 CREATE TABLE "tech_groups" (
 	"tech"	text,
@@ -1710,20 +1566,6 @@ CREATE TABLE "tech_groups" (
 	PRIMARY KEY("tech"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
--- Micro-CHP
-INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_CI_N','');
-INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_MICRO_N','');
-INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_CC_N','');
-INSERT INTO "tech_groups" VALUES ('COM_CHP_SLB_CI_N','');
-INSERT INTO "tech_groups" VALUES ('COM_CHP_NGA_SOFC_N','');
-INSERT INTO "tech_groups" VALUES ('COM_CHP_H2_PEMFC_N','');
-INSERT INTO "tech_groups" VALUES ('IND_CHP_BLQ_CI_N','');
-INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_CI_N','');
-INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_MICRO_N','');
-INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_CC_N','');
-INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_STR_N','');
-INSERT INTO "tech_groups" VALUES ('RES_CHP_NGA_SOFC_N','');
-INSERT INTO "tech_groups" VALUES ('RES_CHP_H2_PEMFC_N','');
 -- Electricity sector
 INSERT INTO "tech_groups" VALUES ('ELC_FT_H2','');
 INSERT INTO "tech_groups" VALUES ('ELC_COA_E','');
@@ -1804,11 +1646,9 @@ INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_CAN','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_MEX','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_OLA','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_BRA','');
-INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_RUS','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_MEA','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_AFR','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_CHI','');
-INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_JPN','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_OIL_ODA','');
 INSERT INTO "tech_groups" VALUES ('UPS_LOC_HOIL_1','');
 INSERT INTO "tech_groups" VALUES ('UPS_LOC_HOIL_2','');
@@ -1893,9 +1733,6 @@ INSERT INTO "tech_groups" VALUES ('ELC_FT_NGA','');
 INSERT INTO "tech_groups" VALUES ('ELC_STG_CEN_BTT_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_STG_DST_BTT_N','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_PIP_AFR','');
-INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_PIP_RUS','');
-INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_PIP_CAC','');
-INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_PIP_MEA','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_LNG_AFR','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_LNG_MEA','');
 INSERT INTO "tech_groups" VALUES ('UPS_IMP_GAS_LNG_GLB','');
@@ -2326,18 +2163,13 @@ INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_CAN','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_MEX','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_OLA','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_BRA','OIL_TPES_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_RUS','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_MEA','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_AFR','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_CHI','OIL_TPES_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_JPN','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_OIL_ODA','OIL_TPES_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_EXP_OIL','OIL_TPES_GRP',1.0,'');
 
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_PIP_AFR','IMP_NGA_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_PIP_RUS','IMP_NGA_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_PIP_CAC','IMP_NGA_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_PIP_MEA','IMP_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_LNG_AFR','IMP_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_LNG_MEA','IMP_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('UPS_IMP_GAS_LNG_GLB','IMP_NGA_GRP',1.0,'');
@@ -3003,6 +2835,7 @@ INSERT INTO "MinCapacityGroup" VALUES ('EU',2010,'ELC_NUC_FIS_GRP',130.96,'GW');
 INSERT INTO "MinCapacityGroup" VALUES ('EU',2015,'ELC_NUC_FIS_GRP',120.41,'GW');
 INSERT INTO "MinCapacityGroup" VALUES ('EU',2020,'ELC_NUC_FIS_GRP',112.94,'GW');
 
+-- TODO (chiedere)
 CREATE TABLE "MaxInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -3084,6 +2917,7 @@ INSERT INTO "MaxInputGroup" VALUES ('EU',2050,'ELC_HYD_DAM','ELC_HYD_GEN_GRP',0.
 INSERT INTO "MaxInputGroup" VALUES ('EU',2010,'GAS_LNG','EXP_NGA_GRP',0.06,'');
 INSERT INTO "MaxInputGroup" VALUES ('EU',2050,'GAS_LNG','EXP_NGA_GRP',0.06,'');
 
+-- TODO (chiedere)
 CREATE TABLE "MinInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -3112,6 +2946,7 @@ INSERT INTO "MinInputGroup" VALUES ('EU',2050,'GAS_LNG','EXP_NGA_GRP',0.04,'');
 INSERT INTO "MinInputGroup" VALUES ('EU',2020,'ELC_CEN','ELC_FT_H2_GRP',0.06,'');
 INSERT INTO "MinInputGroup" VALUES ('EU',2050,'ELC_CEN','ELC_FT_H2_GRP',0.06,'');
 
+-- TODO (chiedere)
 CREATE TABLE "MaxOutputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -3202,18 +3037,6 @@ CREATE TABLE "LifetimeTech" (
 	PRIMARY KEY("regions","tech"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
--- Micro-CHP
-INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_NGA_CI_N',15,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_SLB_CI_N',15,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_NGA_SOFC_N',20,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','COM_CHP_H2_PEMFC_N',20,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','IND_CHP_NGA_CI_N',15,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','IND_CHP_NGA_TV_N',30,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','IND_CHP_BLQ_CI_N',15,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_NGA_CI_N',15,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_NGA_STR_N',15,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_NGA_SOFC_N',20,'');
-INSERT INTO "LifetimeTech" VALUES ('IT','RES_CHP_H2_PEMFC_N',20,'');
 -- Upstream sector
 INSERT INTO "LifetimeTech" VALUES ('EU','UPS_SEC_L2G_ON',50,'');
 INSERT INTO "LifetimeTech" VALUES ('EU','UPS_SEC_L2G_OFF',50,'');
@@ -3365,10 +3188,6 @@ INSERT INTO "LifetimeTech" VALUES ('EU','ELC_STG_CEN_BTT_N',15,'10.25984/1871952
 INSERT INTO "LifetimeTech" VALUES ('EU','ELC_STG_DST_BTT_N',15,'10.25984/1871952');
 -- Import/Export
 INSERT INTO "LifetimeTech" VALUES ('EU','UPS_IMP_ELC_AFR',10,'');
-INSERT INTO "LifetimeTech" VALUES ('EU','UPS_IMP_ELC_OEE',10,'');
-INSERT INTO "LifetimeTech" VALUES ('EU','UPS_IMP_ELC_RUS',10,'');
-INSERT INTO "LifetimeTech" VALUES ('EU','UPS_IMP_ELC_MEA',10,'');
-INSERT INTO "LifetimeTech" VALUES ('EU','UPS_IMP_ELC_CAC',10,'');
 
 CREATE TABLE "LifetimeProcess" (
 	"regions"	text,
@@ -3380,25 +3199,6 @@ CREATE TABLE "LifetimeProcess" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
--- Micro-CHP
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2007,12,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2014,13,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2022,16,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_MICRO_N',2030,20,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2007,15,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2014,18,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2022,20,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','COM_CHP_NGA_CC_N',2030,20,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2007,12,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2014,13,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2022,16,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_MICRO_N',2030,20,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_CC_N',2007,15,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_CC_N',2014,18,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','RES_CHP_NGA_CC_N',2022,20,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','IND_CHP_NGA_TG_N',2007,20,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','IND_CHP_NGA_TG_N',2014,22,'');
-INSERT INTO "LifetimeProcess" VALUES ('IT','IND_CHP_NGA_TG_N',2030,25,'');
 -- Hydrogen
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_ALK',2020,8,'');
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_ALK',2030,11,'');
@@ -3411,6 +3211,7 @@ INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_SOEC',2030,5,'');
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_SOEC',2050,10,'');
 INSERT INTO "LifetimeProcess" VALUES ('EU','H2_EL_AEM',2050,10,'');
 
+-- TODO (chiedere)
 -- Controllare bilanci EUROSTAT versione excel
 CREATE TABLE "Efficiency" (
 	"regions"	text,
@@ -3428,28 +3229,19 @@ CREATE TABLE "Efficiency" (
 );
 -- Import, mining and primary renewable resources
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_ELC_AFR',2005,'ELC_CEN',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_ELC_OEE',2005,'ELC_CEN',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_ELC_RUS',2005,'ELC_CEN',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_ELC_MEA',2010,'ELC_CEN',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_ELC_CAC',2050,'ELC_CEN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_USA',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_CAN',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_MEX',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_OLA',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_BRA',2005,'OIL_CRD_MIN',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_RUS',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_MEA',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_AFR',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_CHI',2005,'OIL_CRD_MIN',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_JPN',2010,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_ODA',2005,'OIL_CRD_MIN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_OIL_FEE',2005,'OIL_FEE',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','OIL_CRD_MIN','UPS_EXP_OIL',2005,'DMY_OUT',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','OIL_OBI_MIN','UPS_EXP_OIL',2005,'DMY_OUT',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_GAS_PIP_AFR',2005,'GAS_NGA',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_GAS_PIP_RUS',2005,'GAS_NGA',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_GAS_PIP_CAC',2005,'GAS_NGA',1.00,'');
-INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_GAS_PIP_MEA',2030,'GAS_NGA',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','GAS_NGA','UPS_EXP_GAS',2005,'DMY_OUT',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','GAS_LNG','UPS_EXP_GAS',2005,'DMY_OUT',1.00,'');
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_IMP_GAS_LNG_AFR',2005,'GAS_LNG',1.00,'');
@@ -3808,113 +3600,6 @@ INSERT INTO "Efficiency" VALUES ('EU','BIO_GRS','BIO_REF2_KER_CCS_N',2030,'UPS_E
 INSERT INTO "Efficiency" VALUES ('EU','UPS_NGA','BIO_REF2_KER_CCS_N',2030,'UPS_ELC',0.630,'10.5281/zenodo.3544900');
 INSERT INTO "Efficiency" VALUES ('EU','BIO_GRS','BIO_REF2_KER_CCS_N',2030,'BIO_NAP',0.630,'10.5281/zenodo.3544900');
 INSERT INTO "Efficiency" VALUES ('EU','UPS_NGA','BIO_REF2_KER_CCS_N',2030,'BIO_NAP',0.630,'10.5281/zenodo.3544900');
--- Micro-CHP
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2007,'ELC_DST',0.350,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2007,'HET',0.450,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2014,'ELC_DST',0.375,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2014,'HET',0.450,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2022,'ELC_DST',0.410,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2022,'HET',0.450,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2030,'ELC_DST',0.450,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CI_N',2030,'HET',0.432,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2007,'ELC_DST',0.280,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2007,'HET',0.520,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2014,'ELC_DST',0.310,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2014,'HET',0.510,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2022,'ELC_DST',0.360,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2022,'HET',0.500,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2030,'ELC_DST',0.440,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_MICRO_N',2030,'HET',0.480,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2007,'ELC_DST',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2007,'HET',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2014,'ELC_DST',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2014,'HET',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2022,'ELC_DST',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2022,'HET',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2030,'ELC_DST',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_CC_N',2030,'HET',0.400,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2007,'ELC_DST',0.350,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2007,'HET',0.450,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2014,'ELC_DST',0.360,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2014,'HET',0.432,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2022,'ELC_DST',0.375,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2022,'HET',0.412,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2030,'ELC_DST',0.390,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','COM_CHP_SLB_CI_N',2030,'HET',0.402,'');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_SOFC_N',2020,'ELC_DST',0.90,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','COM_CHP_NGA_SOFC_N',2020,'HET',0.90,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2025,'ELC_DST',0.94,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2025,'HET',0.94,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2030,'ELC_DST',0.96,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','COM_CHP_H2_PEMFC_N',2030,'HET',0.96,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2007,'ELC_DST',0.800,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2014,'ELC_DST',0.825,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2022,'ELC_DST',0.860,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2030,'ELC_DST',0.880,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2050,'ELC_DST',0.907,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2007,'ELC_DST',0.740,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2014,'ELC_DST',0.750,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2022,'ELC_DST',0.750,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2030,'ELC_DST',0.800,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2007,'ELC_DST',0.750,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2014,'ELC_DST',0.760,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2022,'ELC_DST',0.774,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2030,'ELC_DST',0.790,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2014,'ELC_DST',0.870,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2022,'ELC_DST',0.905,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2030,'ELC_DST',0.923,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2050,'ELC_DST',0.931,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2007,'HET',0.800,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2014,'HET',0.825,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2022,'HET',0.860,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2030,'HET',0.880,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_CI_N',2050,'HET',0.907,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2007,'HET',0.740,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2014,'HET',0.750,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2022,'HET',0.750,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TG_N',2030,'HET',0.800,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2007,'HET',0.750,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2014,'HET',0.760,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2022,'HET',0.774,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','IND_CHP_NGA_TV_N',2030,'HET',0.790,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2014,'HET',0.870,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2022,'HET',0.905,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2030,'HET',0.923,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_BLQ','IND_CHP_BLQ_CI_N',2050,'HET',0.931,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2007,'ELC_DST',0.350,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2014,'ELC_DST',0.375,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2022,'ELC_DST',0.410,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2030,'ELC_DST',0.450,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2007,'HET',0.450,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2014,'HET',0.450,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2022,'HET',0.450,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CI_N',2030,'HET',0.432,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2007,'ELC_DST',0.280,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2014,'ELC_DST',0.310,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2022,'ELC_DST',0.360,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2030,'ELC_DST',0.440,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2007,'HET',0.520,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2014,'HET',0.510,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2022,'HET',0.500,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_MICRO_N',2030,'HET',0.480,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2007,'ELC_DST',0.40,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2007,'HET',0.40,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2014,'ELC_DST',0.40,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2014,'HET',0.40,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2022,'ELC_DST',0.40,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_CC_N',2022,'HET',0.40,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2022,'ELC_DST',0.16,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2022,'HET',0.64,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2030,'ELC_DST',0.20,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_STR_N',2030,'HET',0.60,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_SOFC_N',2020,'ELC_DST',0.90,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','RES_CHP_NGA_SOFC_N',2020,'HET',0.90,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2020,'ELC_DST',0.92,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2020,'HET',0.92,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2025,'ELC_DST',0.94,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2025,'HET',0.94,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2030,'ELC_DST',0.96,'PJ/PJ');
-INSERT INTO "Efficiency" VALUES ('IT','ELC_H2','RES_CHP_H2_PEMFC_N',2030,'HET',0.96,'PJ/PJ');
 -- Nuclear fuel cycle
 -- Fuel production
 INSERT INTO "Efficiency" VALUES ('EU','ethos','UPS_MIN_IMP_URA_NAT',2010,'URA_NAT',1.00,'10.1016/j.fusengdes.2024.114679');
@@ -4436,6 +4121,7 @@ INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_VAN',2007,'VAN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_YTT',2007,'YTT',1.00,'');
 INSERT INTO "Efficiency" VALUES ('IT','ethos','MAT_SUP_ZIR',2007,'ZIR',1.00,'');
 
+-- TODO
 CREATE TABLE "ExistingCapacity" (
 	"regions"	text,
 	"tech"	text,
@@ -4447,20 +4133,18 @@ CREATE TABLE "ExistingCapacity" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
+-- MAFFIODO
 ---- Import
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_BIO_DST',2005,7013.0*0.0385,'PJ','');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_BIO_ETH',2005,6573.7*0.027,'PJ','');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_BIO_WOD',2005,283.0,'PJ','');
 
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_ELC_AFR',2005,0.55,'','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_ELC_OEE',2005,3.90,'','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_ELC_RUS',2005,2.60,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_USA',2005,71.770,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_CAN',2005,34.955,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_MEX',2005,441.091,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_OLA',2005,646.722,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_BRA',2005,295.924,'','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_RUS',2005,10628.103,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_MEA',2005,6569.433,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_AFR',2005,5585.593,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_CHI',2005,4.369,'','10.1016/j.fusengdes.2024.114679');
@@ -4468,8 +4152,6 @@ INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_ODA',2005,266.533,'','1
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_OIL_FEE',2005,1602.423,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_EXP_OIL',2005,11895.702+8693.412,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_GAS_PIP_AFR',2005,2283.528,'','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_GAS_PIP_RUS',2005,6990.903,'','10.1016/j.fusengdes.2024.114679');
-INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_GAS_PIP_CAC',2005,36.628,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_GAS_LNG_AFR',2005,1190.230,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_GAS_LNG_MEA',2005,1185.770,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_GAS_LNG_OLA',2005,228.520,'','10.1016/j.fusengdes.2024.114679');
@@ -4482,7 +4164,6 @@ INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_COA_RUS',2005,1130.197,'','
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_COA_ODA',2005,284.870,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_COA_USA',2005,666.473,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_IMP_COA_OLA',2005,944.024,'','10.1016/j.fusengdes.2024.114679');
-
 -- Upstream sector
 -- Non-renewable primary energy sources
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_LOC_HOIL_1',2005,96114.274,'','10.1016/j.fusengdes.2024.114679');
@@ -4513,6 +4194,7 @@ INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_DIS_NGA_2',2005,1446.335,'','10
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_DIS_NGA_3',2005,1084.751,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_DIS_BCO',2005,971161.167,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_DIS_HCO',2005,367330.132,'','10.1016/j.fusengdes.2024.114679');
+-- GNOCCHI
 ---- Primary renewable sources
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_BIO_RPS_POT',2005,373.6,'','');
 INSERT INTO "ExistingCapacity" VALUES ('EU','UPS_BIO_CRP_STC_POT',2005,172.7,'','');
@@ -4576,6 +4258,7 @@ INSERT INTO "ExistingCapacity" VALUES ('EU','HET_BIO_E',2005,(226.767+45.917)*0.
 INSERT INTO "ExistingCapacity" VALUES ('EU','HET_GEO_E',2005,23.81*0.21,'PJ','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "ExistingCapacity" VALUES ('EU','HET_SOL_E',2005,0.55,'PJ','10.1016/j.fusengdes.2024.114679');
 
+-- TODO (chiedere)
 CREATE TABLE "CostInvest" (
 	"regions"	text,
 	"tech"	text,
@@ -4586,63 +4269,7 @@ CREATE TABLE "CostInvest" (
 	PRIMARY KEY("regions","tech","vintage"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
-);
--- Micro-CHP
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2007,1100.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2014,1050.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2022,980.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2030,900.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CI_N',2050,900.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2007,1500.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2014,1350.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2022,1160.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2030,1000.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_MICRO_N',2050,1000.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2007,1300.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2014,1300.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2022,1300.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2030,1300.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_CC_N',2050,1300.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2007,1870.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2014,1785.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2022,1666.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2030,1530.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_SLB_CI_N',2050,1350.0,'M€/PJ','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_SOFC_N',2020,10000,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_SOFC_N',2025,7750,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_NGA_SOFC_N',2030,2250,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_H2_PEMFC_N',2025,1500,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','COM_CHP_H2_PEMFC_N',2030,1050,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2007,1.10E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2014,1.05E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2022,1.03E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_CI_N',2030,9.45E+02,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_TG_N',2007,8.00E+02,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_NGA_TV_N',2007,1.50E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2014,2.10E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2022,2.06E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2030,1.89E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','IND_CHP_BLQ_CI_N',2050,1.80E+03,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2007,1100,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2014,1050,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2022,980,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CI_N',2030,900,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2007,1500,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2014,1350,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2022,1160,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_MICRO_N',2030,1000,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CC_N',2007,1300,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CC_N',2014,1300,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_CC_N',2022,1300,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_STR_N',2022,2180,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_STR_N',2030,2100,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_SOFC_N',2020,10000,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_SOFC_N',2025,8000,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_NGA_SOFC_N',2030,3500,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_H2_PEMFC_N',2020,6000,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_H2_PEMFC_N',2025,5000,'M€/GW','');
-INSERT INTO "CostInvest" VALUES ('IT','RES_CHP_H2_PEMFC_N',2030,4000,'M€/GW','');
-
+)
 INSERT INTO "CostInvest" VALUES ('EU','ELC_FT_H2',2020,30.29,'M€/PJ','');
 INSERT INTO "CostInvest" VALUES ('EU','ELC_OIL_E',2010,1E6,'','');
 INSERT INTO "CostInvest" VALUES ('EU','ELC_NGA_E',2010,1E6,'','');
@@ -4671,7 +4298,6 @@ INSERT INTO "CostInvest" VALUES ('EU','UPS_SEC_REF_FLX',2010,4.58,'M€/PJ','10.
 INSERT INTO "CostInvest" VALUES ('EU','UPS_HET_OIL_RPP',2010,150,'M€/PJ','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "CostInvest" VALUES ('EU','UPS_HET_OIL_RPG',2010,150,'M€/PJ','10.1016/j.fusengdes.2024.114679');
 ---- Gas pipelines
-INSERT INTO "CostInvest" VALUES ('EU','UPS_IMP_GAS_PIP_MEA',2030,9.70,'M€/PJ','Based on NordStream');
 ---- Regasification
 INSERT INTO "CostInvest" VALUES ('EU','UPS_SEC_L2G_ON',2010,3.50,'M€/PJ','10.1007/978-3-030-86884-0_2');
 INSERT INTO "CostInvest" VALUES ('EU','UPS_SEC_L2G_ON',2015,4.50,'M€/PJ','10.1007/978-3-030-86884-0_2');
@@ -5131,78 +4757,49 @@ CREATE TABLE "CostVariable" (
 );
 -- Import, mining and primary renewable resources
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_ELC_AFR',2010,56,'M€/PJ','Assuming 200 €/MWh as the import price for electricity from non-EU countries');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_ELC_OEE',2010,56,'M€/PJ','Assuming 200 €/MWh as the import price for electricity from non-EU countries');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_ELC_MEA',2010,56,'M€/PJ','Assuming 200 €/MWh as the import price for electricity from non-EU countries');
-INSERT INTO "CostVariable" VALUES ('EU',2050,'UPS_IMP_ELC_CAC',2050,56,'M€/PJ','Assuming 200 €/MWh as the import price for electricity from non-EU countries');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_ELC_RUS',2010,56,'M€/PJ','Assuming 200 €/MWh as the import price for electricity from non-EU countries');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_USA',2010,13.55+0.182,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_CAN',2010,13.48+0.135,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_MEX',2010,13.48+0.241,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_OLA',2010,13.48+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_BRA',2010,13.48+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_RUS',2010,13.59+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_MEA',2010,13.32+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_AFR',2010,13.48+0.244,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_CHI',2010,13.48+0.459,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_JPN',2010,13.48+0.545,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_OIL_ODA',2010,13.48+0.402,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_USA',2015,8.31+0.182,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_CAN',2015,8.66+0.135,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_MEX',2015,8.66+0.241,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_OLA',2015,8.66+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_BRA',2015,8.66+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_RUS',2015,8.93+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_MEA',2015,8.73+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_AFR',2015,8.66+0.244,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_CHI',2015,8.66+0.459,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_JPN',2015,8.66+0.545,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_OIL_ODA',2015,8.66+0.402,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_USA',2020,6.71+0.182,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_CAN',2020,7.04+0.135,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_MEX',2020,7.04+0.241,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_OLA',2020,7.04+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_BRA',2020,7.04+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_RUS',2020,7.22+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_MEA',2020,7.19+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_AFR',2020,7.04+0.244,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_CHI',2020,7.04+0.459,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_JPN',2020,7.04+0.545,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_OIL_ODA',2020,7.04+0.402,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_USA',2025,12.75+0.182,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_CAN',2025,13.11+0.135,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_MEX',2025,13.11+0.241,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_OLA',2025,13.11+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_BRA',2025,13.11+0.201,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_RUS',2025,13.48+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_MEA',2025,13.10+0.502,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_AFR',2025,13.11+0.244,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_CHI',2025,13.11+0.459,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_JPN',2025,13.11+0.545,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_OIL_ODA',2025,13.11+0.402,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_AFR',2010,8.74+0.185,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_RUS',2010,8.74+0.240,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_CAC',2010,8.74+0.414,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_AFR',2015,7.20+0.185,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_RUS',2015,7.20+0.240,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_CAC',2015,7.20+0.414,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_AFR',2020,3.42+0.185,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_RUS',2020,3.42+0.240,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_CAC',2020,3.42+0.414,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_AFR',2025,11.08+0.185,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_RUS',2025,11.08+0.240,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
-INSERT INTO "CostVariable" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_CAC',2025,11.08+0.414,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_AFR',2030,8.74+0.185,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_RUS',2030,8.74+0.240,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_CAC',2030,8.74+0.414,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_MEA',2030,8.74+0.414,'M€/PJ','WEO22');
 INSERT INTO "CostVariable" VALUES ('EU',2040,'UPS_IMP_GAS_PIP_AFR',2040,6.82+0.185,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2040,'UPS_IMP_GAS_PIP_RUS',2040,6.82+0.240,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2040,'UPS_IMP_GAS_PIP_CAC',2040,6.82+0.414,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2040,'UPS_IMP_GAS_PIP_MEA',2040,6.82+0.414,'M€/PJ','WEO22');
 INSERT INTO "CostVariable" VALUES ('EU',2050,'UPS_IMP_GAS_PIP_AFR',2050,7.09+0.185,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2050,'UPS_IMP_GAS_PIP_RUS',2050,7.09+0.240,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2050,'UPS_IMP_GAS_PIP_CAC',2050,7.09+0.414,'M€/PJ','WEO22');
-INSERT INTO "CostVariable" VALUES ('EU',2050,'UPS_IMP_GAS_PIP_MEA',2050,7.09+0.414,'M€/PJ','WEO22');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_AFR',2010,11.44+0.071,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_MEA',2010,11.44+0.178,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
 INSERT INTO "CostVariable" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_GLB',2010,11.44+1.142,'M€/PJ','World Bank data - Update April 2024 + transport cost as in EUROfusion WPSES, EUROfusion TIMES Model, 2023');
@@ -5659,23 +5256,6 @@ CREATE TABLE "CurrencyTech" (
 	"curr"	text,
 	PRIMARY KEY("tech","curr")
 );
--- Micro-CHP
-INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_CI_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_MICRO_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_CC_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('COM_CHP_SLB_CI_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('COM_CHP_NGA_SOFC_N','EUR20');
-INSERT INTO "CurrencyTech" VALUES ('COM_CHP_H2_PEMFC_N','EUR20');
-INSERT INTO "CurrencyTech" VALUES ('IND_CHP_NGA_CI_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('IND_CHP_NGA_TG_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('IND_CHP_NGA_TV_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('IND_CHP_BLQ_CI_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_CI_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_MICRO_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_CC_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_STR_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('RES_CHP_NGA_SOFC_N','EUR20');
-INSERT INTO "CurrencyTech" VALUES ('RES_CHP_H2_PEMFC_N','EUR20');
 -- Hydrogen
 INSERT INTO "CurrencyTech" VALUES ('H2_SR_NGA','EUR10');
 INSERT INTO "CurrencyTech" VALUES ('H2_GS_COA','EUR10');
@@ -5712,23 +5292,6 @@ CREATE TABLE "CapacityFactor" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
--- Micro-CHP
-INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_CI_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_MICRO_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_SLB_CI_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_CC_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_NGA_SOFC_N',2020,0.90,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','COM_CHP_H2_PEMFC_N',2025,0.90,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_NGA_CI_N',2007,0.57,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_NGA_TG_N',2007,0.74,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_NGA_TV_N',2007,0.63,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','IND_CHP_BLQ_CI_N',2014,0.57,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_CI_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_MICRO_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_CC_N',2007,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_STR_N',2022,0.34,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_NGA_SOFC_N',2020,0.90,'');
-INSERT INTO "CapacityFactor" VALUES ('IT','RES_CHP_H2_PEMFC_N',2020,0.90,'');
 -- Upstream sector
 INSERT INTO "CapacityFactor" VALUES ('EU','UPS_SEC_L2G_ON',2005,0.50,'');
 INSERT INTO "CapacityFactor" VALUES ('EU','UPS_SEC_L2G_OFF',2010,0.40,'');
@@ -6003,32 +5566,11 @@ CREATE TABLE "CapacityToActivity" (
 );
 -- Import, mining and primary renewable resources
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_IMP_ELC_AFR',31.536,'');
-INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_IMP_ELC_OEE',31.536,'');
-INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_IMP_ELC_RUS',31.536,'');
-INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_IMP_ELC_MEA',31.536,'');
-INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_IMP_ELC_CAC',31.536,'');
 -- Upstream sector
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_SOL_TH_POT',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_HET_OIL_RPP',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_HET_OIL_RPG',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','UPS_HET_GAS_NGA',31.536,'');
--- Micro-CHP
-INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_CI_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_MICRO_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_SLB_CI_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_CC_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_NGA_SOFC_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','COM_CHP_H2_PEMFC_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_NGA_CI_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_NGA_TG_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_NGA_TV_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','IND_CHP_BLQ_CI_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_CI_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_MICRO_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_CC_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_STR_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_NGA_SOFC_N',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','RES_CHP_H2_PEMFC_N',31.536,'PJ/GW');
 -- Electricity sector
 INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_OIL_E',31.536,'');
 INSERT INTO "CapacityToActivity" VALUES ('EU','ELC_NGA_E',31.536,'');
@@ -6114,19 +5656,6 @@ CREATE TABLE "CapacityCredit" (
 	"cf_tech_notes"	text,
 	PRIMARY KEY("regions","periods","tech","vintage")
 );
--- Micro-CHP
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_NGA_CI_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_NGA_MICRO_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_SLB_CI_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'COM_CHP_NGA_CC_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2020,'COM_CHP_NGA_SOFC_N',2020,0.20,'Assumption');
-INSERT INTO "CapacityCredit" VALUES ('IT',2025,'COM_CHP_H2_PEMFC_N',2025,0.20,'Assumption');
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'RES_CHP_NGA_CI_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'RES_CHP_NGA_MICRO_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2007,'RES_CHP_NGA_CC_N',2007,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2022,'RES_CHP_NGA_STR_N',2022,0.20,'TIMES-Italy');
-INSERT INTO "CapacityCredit" VALUES ('IT',2020,'RES_CHP_NGA_SOFC_N',2020,0.20,'Assumption');
-INSERT INTO "CapacityCredit" VALUES ('IT',2020,'RES_CHP_H2_PEMFC_N',2020,0.20,'Assumption');
 -- Electricity sector
 INSERT INTO "CapacityCredit" VALUES ('EU',2005,'ELC_OIL_E',2005,1.00,'Assumption');
 INSERT INTO "CapacityCredit" VALUES ('EU',2005,'ELC_NGA_E',2005,1.00,'Assumption');
@@ -6200,11 +5729,13 @@ INSERT INTO "CapacityCredit" VALUES ('EU',2010,'ELC_HYD_PUM_N',2010,0.70,'Assump
 INSERT INTO "CapacityCredit" VALUES ('EU',2020,'ELC_STG_CEN_BTT_N',2020,0.70,'Assumption');
 INSERT INTO "CapacityCredit" VALUES ('EU',2020,'ELC_STG_DST_BTT_N',2020,0.70,'Assumption');
 
+-- TODO (chiedere)
 CREATE TABLE "GlobalDiscountRate" (
 	"rate"	real
 );
 INSERT INTO "GlobalDiscountRate" VALUES (0.05);
 
+-- TODO (chiedere)
 CREATE TABLE "DiscountRate" (
 	"regions"	text,
 	"tech"	text,
@@ -6319,7 +5850,7 @@ CREATE TABLE "Allocation" (
 	FOREIGN KEY("driver_name") REFERENCES "Driver"("driver_name")
 );
 -- Other sectors and dummies (not required in the whole database)
-INSERT INTO "Allocation" VALUES ('IT','DMY_OUT','GDP','');
+INSERT INTO "Allocation" VALUES ('ES','DMY_OUT','GDP','');
 
 CREATE TABLE "Driver" (
     "regions"       text,
@@ -6331,126 +5862,126 @@ CREATE TABLE "Driver" (
 	FOREIGN KEY("regions") REFERENCES "regions"("regions"),
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods")
 );
-INSERT INTO "Driver" VALUES ('EU',2005,'GDP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'GDP',1.028,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'GDP',1.116,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'GDP',1.147,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'GDP',1.322,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'GDP',1.409,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'GDP',1.501,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'GDP',1.594,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'GDP',1.695,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'GDP',1.803,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'GDP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'GDP',1.028,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'GDP',1.116,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'GDP',1.147,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'GDP',1.322,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'GDP',1.409,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'GDP',1.501,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'GDP',1.594,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'GDP',1.695,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'GDP',1.803,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'GDPP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'GDPP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'GDPP',1.056,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'GDPP',1.061,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'GDPP',1.209,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'GDPP',1.276,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'GDPP',1.349,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'GDPP',1.424,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'GDPP',1.509,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'GDPP',1.603,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'GDPP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'GDPP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'GDPP',1.056,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'GDPP',1.061,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'GDPP',1.209,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'GDPP',1.276,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'GDPP',1.349,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'GDPP',1.424,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'GDPP',1.509,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'GDPP',1.603,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'GDPPHOU',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'GDPPHOU',1.028,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'GDPPHOU',1.116,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'GDPPHOU',1.147,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'GDPPHOU',1.322,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'GDPPHOU',1.409,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'GDPPHOU',1.594,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'GDPPHOU',1.501,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'GDPPHOU',1.695,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'GDPPHOU',1.803,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'GDPPHOU',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'GDPPHOU',1.028,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'GDPPHOU',1.116,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'GDPPHOU',1.147,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'GDPPHOU',1.322,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'GDPPHOU',1.409,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'GDPPHOU',1.594,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'GDPPHOU',1.501,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'GDPPHOU',1.695,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'GDPPHOU',1.803,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'HOU',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'HOU',1.024,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'HOU',1.046,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'HOU',1.065,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'HOU',1.084,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'HOU',1.102,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'HOU',1.121,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'HOU',1.140,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'HOU',1.160,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'HOU',1.176,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'HOU',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'HOU',1.024,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'HOU',1.046,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'HOU',1.065,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'HOU',1.084,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'HOU',1.102,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'HOU',1.121,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'HOU',1.140,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'HOU',1.160,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'HOU',1.176,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'PAGR',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'PAGR',1.013,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'PAGR',1.092,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'PAGR',1.114,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'PAGR',1.259,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'PAGR',1.332,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'PAGR',1.409,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'PAGR',1.487,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'PAGR',1.574,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'PAGR',1.665,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'PAGR',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'PAGR',1.013,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'PAGR',1.092,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'PAGR',1.114,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'PAGR',1.259,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'PAGR',1.332,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'PAGR',1.409,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'PAGR',1.487,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'PAGR',1.574,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'PAGR',1.665,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'PCHEM',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'PCHEM',1.005,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'PCHEM',1.042,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'PCHEM',1.021,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'PCHEM',1.138,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'PCHEM',1.167,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'PCHEM',1.203,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'PCHEM',1.236,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'PCHEM',1.279,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'PCHEM',1.322,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'PCHEM',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'PCHEM',1.005,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'PCHEM',1.042,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'PCHEM',1.021,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'PCHEM',1.138,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'PCHEM',1.167,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'PCHEM',1.203,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'PCHEM',1.236,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'PCHEM',1.279,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'PCHEM',1.322,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'PISNF',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'PISNF',0.991,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'PISNF',0.980,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'PISNF',0.913,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'PISNF',0.989,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'PISNF',0.964,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'PISNF',0.955,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'PISNF',0.943,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'PISNF',0.939,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'PISNF',0.933,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'PISNF',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'PISNF',0.991,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'PISNF',0.980,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'PISNF',0.913,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'PISNF',0.989,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'PISNF',0.964,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'PISNF',0.955,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'PISNF',0.943,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'PISNF',0.939,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'PISNF',0.933,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'POEI',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'POEI',1.014,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'POEI',1.049,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'POEI',1.025,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'POEI',1.122,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'POEI',1.147,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'POEI',1.180,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'POEI',1.209,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'POEI',1.248,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'POEI',1.287,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'POEI',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'POEI',1.014,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'POEI',1.049,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'POEI',1.025,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'POEI',1.122,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'POEI',1.147,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'POEI',1.180,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'POEI',1.209,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'POEI',1.248,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'POEI',1.287,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'POI',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'POI',1.050,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'POI',1.118,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'POI',1.284,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'POI',1.428,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'POI',1.584,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'POI',1.763,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'POI',1.955,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'POI',2.105,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'POI',2.265,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'POI',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'POI',1.050,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'POI',1.118,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'POI',1.284,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'POI',1.428,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'POI',1.584,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'POI',1.763,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'POI',1.955,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'POI',2.105,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'POI',2.265,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'POP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'POP',1.028,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'POP',1.056,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'POP',1.081,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'POP',1.093,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'POP',1.104,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'POP',1.113,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'POP',1.120,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'POP',1.122,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'POP',1.124,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'POP',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'POP',1.028,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'POP',1.056,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'POP',1.081,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'POP',1.093,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'POP',1.104,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'POP',1.113,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'POP',1.120,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'POP',1.122,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'POP',1.124,'U.S. EIA, International Energy Outlook 2021, 2022');
 
-INSERT INTO "Driver" VALUES ('EU',2005,'PSER',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2010,'PSER',1.020,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2015,'PSER',1.130,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2020,'PSER',1.185,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2025,'PSER',1.381,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2030,'PSER',1.519,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2035,'PSER',1.667,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2040,'PSER',1.822,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2045,'PSER',2.000,'U.S. EIA, International Energy Outlook 2021, 2022');
-INSERT INTO "Driver" VALUES ('EU',2050,'PSER',2.194,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2005,'PSER',1.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2010,'PSER',1.020,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2015,'PSER',1.130,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2020,'PSER',1.185,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2025,'PSER',1.381,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2030,'PSER',1.519,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2035,'PSER',1.667,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2040,'PSER',1.822,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2045,'PSER',2.000,'U.S. EIA, International Energy Outlook 2021, 2022');
+INSERT INTO "Driver" VALUES ('ES',2050,'PSER',2.194,'U.S. EIA, International Energy Outlook 2021, 2022');
 
 CREATE TABLE "Elasticity" (
     "regions"       text,
@@ -6464,22 +5995,23 @@ CREATE TABLE "Elasticity" (
 	FOREIGN KEY("demand_comm") REFERENCES "commodities"("comm_name")
 );
 -- Other sectors and dummies (not required in the whole database)
-INSERT INTO "Elasticity" VALUES ('IT',2007,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2008,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2010,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2012,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2014,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2016,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2018,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2020,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2022,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2025,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2030,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2035,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2040,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2045,'DMY_OUT',0.00,'');
-INSERT INTO "Elasticity" VALUES ('IT',2050,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2007,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2008,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2010,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2012,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2014,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2016,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2018,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2020,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2022,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2025,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2030,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2035,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2040,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2045,'DMY_OUT',0.00,'');
+INSERT INTO "ElasticESy" VALUES ('ES',2050,'DMY_OUT',0.00,'');
 
+-- TODO
 CREATE TABLE "Demand" (
 	"regions"	text,
 	"periods"	integer,
@@ -6491,21 +6023,26 @@ CREATE TABLE "Demand" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("demand_comm") REFERENCES "commodities"("comm_name")
 );
-INSERT INTO "Demand" VALUES ('IT',2007,'ELC_DEM',1129.99,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2008,'ELC_DEM',1148.87,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2010,'ELC_DEM',1087.43,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2012,'ELC_DEM',1077.40,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2014,'ELC_DEM',1007.38,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2016,'ELC_DEM',1043.16,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2018,'ELC_DEM',1042.95,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2020,'ELC_DEM',1009.91,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2022,'ELC_DEM',1022.26,'PJ','IEA');
-INSERT INTO "Demand" VALUES ('IT',2025,'ELC_DEM',984.13,'PJ','Decarbonization Scenario of TEMOA-Italy');
-INSERT INTO "Demand" VALUES ('IT',2030,'ELC_DEM',1085.99,'PJ','Decarbonization Scenario of TEMOA-Italy');
-INSERT INTO "Demand" VALUES ('IT',2035,'ELC_DEM',1191.04,'PJ','Decarbonization Scenario of TEMOA-Italy');
-INSERT INTO "Demand" VALUES ('IT',2040,'ELC_DEM',1295.30,'PJ','Decarbonization Scenario of TEMOA-Italy');
-INSERT INTO "Demand" VALUES ('IT',2045,'ELC_DEM',1393.12,'PJ','Decarbonization Scenario of TEMOA-Italy');
-INSERT INTO "Demand" VALUES ('IT',2050,'ELC_DEM',1432.38,'PJ','Decarbonization Scenario of TEMOA-Italy');
+-- Historic demands
+INSERT INTO "Demand" VALUES ('ES',2005,'ELC_DEM',246.422*3.6,'PJ','REE');
+INSERT INTO "Demand" VALUES ('ES',2008,'ELC_DEM',265.185*3.6,'PJ','REE');
+INSERT INTO "Demand" VALUES ('ES',2010,'ELC_DEM',260.331*3.6,'PJ','REE');
+INSERT INTO "Demand" VALUES ('ES',2015,'ELC_DEM',247.970*3.6,'PJ','REE');
+INSERT INTO "Demand" VALUES ('ES',2020,'ELC_DEM',236.697*3.6,'PJ','REE');
+INSERT INTO "Demand" VALUES ('ES',2025,'ELC_DEM',256.086*3.6,'PJ','REE');
+-- Decarbonization scenario demand
+-- INSERT INTO "Demand" VALUES ('ES',2030,'ELC_DEM',274*3.6,'PJ','Decarbonization Scenario of Escenarios para el sector energético en España');
+-- INSERT INTO "Demand" VALUES ('ES',2035,'ELC_DEM',304.4*3.6,'PJ','Decarbonization Scenario of Escenarios para el sector energético en España');
+-- INSERT INTO "Demand" VALUES ('ES',2040,'ELC_DEM',342.7*3.6,'PJ','Decarbonization Scenario of Escenarios para el sector energético en España');
+-- INSERT INTO "Demand" VALUES ('ES',2045,'ELC_DEM',388.9*3.6,'PJ','Decarbonization Scenario of Escenarios para el sector energético en España');
+-- INSERT INTO "Demand" VALUES ('ES',2050,'ELC_DEM',443*3.6,'PJ','Decarbonization Scenario of Escenarios para el sector energético en España');
+-- Current policies scenario demand
+INSERT INTO "Demand" VALUES ('ES',2030,'ELC_DEM',292*3.6,'PJ','CP Scenario of Escenarios para el sector energético en España');
+INSERT INTO "Demand" VALUES ('ES',2035,'ELC_DEM',314.6*3.6,'PJ','CP Scenario of Escenarios para el sector energético en España');
+INSERT INTO "Demand" VALUES ('ES',2040,'ELC_DEM',338.1*3.6,'PJ','CP Scenario of Escenarios para el sector energético en España');
+INSERT INTO "Demand" VALUES ('ES',2045,'ELC_DEM',362.6*3.6,'PJ','CP Scenario of Escenarios para el sector energético en España');
+INSERT INTO "Demand" VALUES ('ES',2050,'ELC_DEM',388*3.6,'PJ','CP Scenario of Escenarios para el sector energético en España');
+
 INSERT INTO "Demand" VALUES ('IT',2025,'HET_DEM',203.89,'PJ','Decarbonization Scenario of TEMOA-Italy');
 INSERT INTO "Demand" VALUES ('IT',2030,'HET_DEM',214.08,'PJ','Decarbonization Scenario of TEMOA-Italy');
 INSERT INTO "Demand" VALUES ('IT',2035,'HET_DEM',224.79,'PJ','Decarbonization Scenario of TEMOA-Italy');
@@ -6513,7 +6050,7 @@ INSERT INTO "Demand" VALUES ('IT',2040,'HET_DEM',236.03,'PJ','Decarbonization Sc
 INSERT INTO "Demand" VALUES ('IT',2045,'HET_DEM',247.83,'PJ','Decarbonization Scenario of TEMOA-Italy');
 INSERT INTO "Demand" VALUES ('IT',2050,'HET_DEM',260.22,'PJ','Decarbonization Scenario of TEMOA-Italy');
 -- Other sectors and dummies (not required in the whole database)
-INSERT INTO "Demand" VALUES ('IT',2006,'DMY_OUT',1E6,'PJ','');
+INSERT INTO "Demand" VALUES ('ES',2005,'DMY_OUT',1E6,'PJ','');
 
 CREATE TABLE "CommodityEmissionFactor" (
 	"input_comm"    text,
@@ -6589,6 +6126,7 @@ INSERT INTO "EmissionAggregation" VALUES ('ELC_CH4','GWP_100',0.028,'kt/t','U.S.
 INSERT INTO "EmissionAggregation" VALUES ('UPS_N2O','GWP_100',0.265,'kt/t','U.S. EPA, "Emission Factors for Greenhouse Gas Inventories", 2014');
 INSERT INTO "EmissionAggregation" VALUES ('ELC_N2O','GWP_100',0.265,'kt/t','U.S. EPA, "Emission Factors for Greenhouse Gas Inventories", 2014');
 
+-- TODO - da cambiare per le run
 CREATE TABLE "EmissionLimit" (
 	"regions"	text,
 	"periods"	integer,
@@ -6602,9 +6140,9 @@ CREATE TABLE "EmissionLimit" (
 );
 -- Decarbonization scenario
 -- Emission limit are relative to 1990 emissions for OECD Europe countries, taken from https://ourworldindata.org/co2-emissions
-INSERT INTO "EmissionLimit" VALUES ('EU',2030,'GWP_100',4.42E+06*(1.00-0.55),'kt','Fit for 55');
-INSERT INTO "EmissionLimit" VALUES ('EU',2040,'GWP_100',4.42E+06*(1.00-0.90),'kt','European Climate Law');
-INSERT INTO "EmissionLimit" VALUES ('EU',2050,'GWP_100',4.42E+06*(1.00-1.00),'kt','Net-zero Emissions');
+-- INSERT INTO "EmissionLimit" VALUES ('ES',2030,'GWP_100',4.42E+06*(1.00-0.55),'kt','Fit for 55');
+-- INSERT INTO "EmissionLimit" VALUES ('ES',2040,'GWP_100',4.42E+06*(1.00-0.90),'kt','European Climate Law');
+-- INSERT INTO "EmissionLimit" VALUES ('ES',2050,'GWP_100',4.42E+06*(1.00-1.00),'kt','Net-zero Emissions');
 
 CREATE TABLE "EmissionActivity" (
 	"regions"	text,
@@ -6825,7 +6363,7 @@ CREATE TABLE "MaxResource" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	PRIMARY KEY("regions","tech")
 );
--- CCUS - tenere se troviamo dati sulla spagna
+-- CCUS - tenere se troviamo dati sulla Spagna
 INSERT INTO "MaxResource" VALUES ('EU','SEQ_SNK_EOR_ONS_N',10400000,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "MaxResource" VALUES ('EU','SEQ_SNK_EOR_OFF_N',8600000,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "MaxResource" VALUES ('EU','SEQ_SNK_DOF_ONS_N',7500000,'','10.1016/j.fusengdes.2024.114679');
@@ -6854,6 +6392,7 @@ CREATE TABLE "MinCapacity" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods")
 );
 
+-- TODO (chiedere)
 CREATE TABLE "MaxCapacity" (
 	"regions"	text,
 	"periods"	integer,
@@ -6867,26 +6406,10 @@ CREATE TABLE "MaxCapacity" (
 );
 -- Import, mining and primary renewable resources
 INSERT INTO "MaxCapacity" VALUES ('EU',2010,'UPS_IMP_ELC_AFR',1.359,'','10.2833/092722');
-INSERT INTO "MaxCapacity" VALUES ('EU',2010,'UPS_IMP_ELC_OEE',4.553+2.094+0.789+3.590+5.040+1.054+1.132+1.073,'','10.2833/092722');
-INSERT INTO "MaxCapacity" VALUES ('EU',2010,'UPS_IMP_ELC_RUS',2.464+0.696+2.490,'','10.2833/092722');
-INSERT INTO "MaxCapacity" VALUES ('EU',2010,'UPS_IMP_ELC_MEA',2.485+1.900,'','10.2833/092722');
 INSERT INTO "MaxCapacity" VALUES ('EU',2020,'UPS_IMP_ELC_AFR',1.359,'','10.2833/092722');
-INSERT INTO "MaxCapacity" VALUES ('EU',2020,'UPS_IMP_ELC_OEE',4.553+2.094+0.789+3.590+5.040+1.054+1.132+1.073,'','10.2833/092722');
-INSERT INTO "MaxCapacity" VALUES ('EU',2020,'UPS_IMP_ELC_RUS',2.464+0.696+2.490,'','10.2833/092722');
-INSERT INTO "MaxCapacity" VALUES ('EU',2020,'UPS_IMP_ELC_MEA',2.485+1.900,'','10.2833/092722');
 INSERT INTO "MaxCapacity" VALUES ('EU',2025,'UPS_IMP_ELC_AFR',1.359,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2025,'UPS_IMP_ELC_OEE',0.700+1.054+1.132+1.073,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2025,'UPS_IMP_ELC_RUS',2.464+0.696+2.490,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2025,'UPS_IMP_ELC_MEA',2.485+1.900,'','');
 --INSERT INTO "MaxCapacity" VALUES ('EU',2030,'UPS_IMP_ELC_AFR',1.359+0.500,'','');
---INSERT INTO "MaxCapacity" VALUES ('EU',2030,'UPS_IMP_ELC_OEE',0.700+1.054+1.132+1.073,'',''); -- GMK Center, Ukraine can increase electricity imports from Europe without daily restrictions, 2023 https://gmk.center/en/news/ukraine-can-increase-electricity-imports-from-europe-without-daily-restrictions/
---INSERT INTO "MaxCapacity" VALUES ('EU',2030,'UPS_IMP_ELC_RUS',2.464+0.696+2.490,'','');
---INSERT INTO "MaxCapacity" VALUES ('EU',2030,'UPS_IMP_ELC_MEA',4.385+1.000,'','');
 INSERT INTO "MaxCapacity" VALUES ('EU',2050,'UPS_IMP_ELC_AFR',1.359+0.500+2.000+3.000,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2050,'UPS_IMP_ELC_OEE',4.553+2.094+0.789+3.590+5.040+1.054+1.132+1.073,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2050,'UPS_IMP_ELC_RUS',2.464+0.696+2.490,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2050,'UPS_IMP_ELC_MEA',4.385+1.000,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2050,'UPS_IMP_ELC_CAC',1.000,'','');
 -- 500 MW (Italy-Tunisia) In permitting 2028 https://tyndp2022-project-platform.azurewebsites.net/projectsheets/transmission/29
 -- 2000 MW (Italy-Tunisia) Under consideration 2028 https://tyndp2022-project-platform.azurewebsites.net/projectsheets/transmission/283
 -- 1000 MW (Greece-Cyprus-Israel) In permitting 2026 https://tyndp2022-project-platform.azurewebsites.net/projectsheets/transmission/219
@@ -6895,9 +6418,6 @@ INSERT INTO "MaxCapacity" VALUES ('EU',2050,'UPS_IMP_ELC_CAC',1.000,'','');
 -- ??? MW (Serbia-Hungary) Under consideration 2033 https://tyndp2022-project-platform.azurewebsites.net/projectsheets/transmission/1074
 -- 1000 MW (Georgia-Romania) Under consideration 2029 https://tyndp2022-project-platform.azurewebsites.net/projectsheets/transmission/1105
 INSERT INTO "MaxCapacity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_AFR',2778.430,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_CAC',457.210,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_CAC',703.400,'','');
-INSERT INTO "MaxCapacity" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_MEA',703.400,'','');
 INSERT INTO "MaxCapacity" VALUES ('EU',2025,'UPS_REP_ADV_PUREX_FR_MOX_E',704000,'','');
 INSERT INTO "MaxCapacity" VALUES ('EU',2010,'UPS_LOC_HOIL_1',96114.274,'','10.1016/j.fusengdes.2024.114679');
 INSERT INTO "MaxCapacity" VALUES ('EU',2010,'UPS_LOC_HOIL_2',57668.565,'','10.1016/j.fusengdes.2024.114679');
@@ -6981,6 +6501,7 @@ CREATE TABLE "DiscreteCapacity" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
 
+-- TODO - forcing phase out of existing tech
 CREATE TABLE "MaxActivity" (
 	"regions"	text,
 	"periods"	integer,
@@ -7061,28 +6582,14 @@ INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_ELC_AFR',26.4,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_ELC_AFR',30.8,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2050,'UPS_IMP_ELC_AFR',30.8*1.5,'PJ','');
 
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_ELC_OEE',185.0,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_ELC_OEE',216.0,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2050,'UPS_IMP_ELC_OEE',216.0*1.5,'PJ','');
-
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_ELC_RUS',123.0,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_ELC_RUS',144.0,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2050,'UPS_IMP_ELC_RUS',144.0*1.5,'PJ','');
-
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_ELC_MEA',39.5,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_ELC_MEA',59.2,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2050,'UPS_IMP_ELC_MEA',59.2*1.5,'PJ','');
-
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_USA',281.869,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_CAN',45.454,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_MEX',573.543,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_OLA',1121.453,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_BRA',513.146,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_RUS',18141.907,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_MEA',8810.889,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_AFR',7942.354,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_CHI',5.683,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_JPN',7.582,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_ODA',346.636,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_OIL_FEE',1602.423,'PJ','');
 
@@ -7091,11 +6598,9 @@ INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_CAN',39000.935*1.20E-03
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_MEX',39000.935*1.52E-02*1.05,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_OLA',39000.935*2.97E-02*1.05,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_BRA',39000.935*1.36E-02*1.05,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_RUS',39000.935*4.80E-01*1.05,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_MEA',39000.935*2.33E-01*1.05,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_AFR',39000.935*2.10E-01*1.05,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_CHI',39000.935*1.50E-04*1.05,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_JPN',39000.935*2.01E-04*1.05,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_OIL_ODA',39000.935*9.17E-03*1.05,'PJ','');
 
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_USA',456.966,'PJ','');
@@ -7103,11 +6608,9 @@ INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_CAN',31.521,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_MEX',397.738,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_OLA',1166.519,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_BRA',533.781,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_RUS',18571.906,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_MEA',6480.449,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_AFR',6448.197,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_CHI',3.941,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_JPN',15.765,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_OIL_ODA',240.384,'PJ','');
 
 INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_USA',994.943,'PJ','');
@@ -7118,32 +6621,12 @@ INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_BRA',1162.191,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_MEA',14109.755,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_AFR',14039.533,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_CHI',8.581,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_JPN',34.325,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_ODA',523.383,'PJ','');
-
---INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_RUS',0,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_OIL_RUS',18571.906*0.285,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2030,'UPS_IMP_OIL_RUS',0,'PJ','');
 
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_AFR',1633.180*1.01,'PJ','');   --10.1016/j.fusengdes.2024.114679
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_AFR',1783.46*1.01,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_AFR',1406.800*1.01,'PJ','');  -- Bruegel, Annual Report 2022 (2021 data)
 INSERT INTO "MaxActivity" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_AFR',2778.430,'PJ',''); -- Maximum capacity
-
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_RUS',13298.229*1.01,'PJ',''); -- EUROfusion TIMES Model + IEA statistical difference
-INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_RUS',14462.654*1.01,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_RUS',13449.259*1.01,'PJ',''); -- Bruegel, Annual Report 2022 (2021 data) + IEA statistical difference
---INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_RUS',13449.259*0.285,'PJ',''); -- RePowerEU
---INSERT INTO "MaxActivity" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_RUS',0.0,'PJ',''); -- RePowerEURePowerEU
---INSERT INTO "MaxActivity" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_RUS',0.0,'PJ',''); -- RePowerEU
-
-INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_CAC',25.00*1.01,'PJ','');  --10.1016/j.fusengdes.2024.114679
-INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_CAC',27.300*1.01,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_CAC',281.360*1.01,'PJ',''); -- Bruegel, Annual Report 2022 (2021 data)
-INSERT INTO "MaxActivity" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_CAC',703.400,'PJ',''); -- European Commission, EU and Azerbaijan enhance bilateral relations, including energy cooperation, https://ec.europa.eu/commission/presscorner/detail/en/ip_22_4550
-
-INSERT INTO "MaxActivity" VALUES ('EU',2030,'UPS_IMP_GAS_PIP_MEA',386.870,'PJ',''); -- https://www.edison.it/it/il-progetto-eastmed-poseidon
-INSERT INTO "MaxActivity" VALUES ('EU',2050,'UPS_IMP_GAS_PIP_MEA',703.400,'PJ',''); -- https://www.edison.it/it/il-progetto-eastmed-poseidon
 
 INSERT INTO "MaxActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_AFR',1589.52*1.01,'PJ',''); -- International Energy Agency, Natural Gas Information 2012
 INSERT INTO "MaxActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_AFR',544.43*1.01,'PJ',''); -- Wood D. A., Natural gas imports to Europe: The frontline of competition between LNG and pipeline supplies, Journ. of Nat. Gas Science and Eng., 2016
@@ -7365,7 +6848,7 @@ INSERT INTO "MaxActivity" VALUES ('EU',2050,'SEQ_SNK_AFF_2_N',66667,'','');
 INSERT INTO "MaxActivity" VALUES ('EU',2050,'SEQ_SNK_AFF_3_N',126983,'','');
 INSERT INTO "MaxActivity" VALUES ('EU',2050,'SEQ_SNK_AFF_4_N',134047,'','');
 
--- Tenere se non tornano i dati storici
+-- TODO - Tenere se non tornano i dati storici
 CREATE table "MinActivity" (
 	"regions"	text,
 	"periods"	integer,
@@ -7378,184 +6861,159 @@ CREATE table "MinActivity" (
 	foreign key("periods") references "time_periods"("t_periods")
 );
 -- Import
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_ELC_AFR',26.4*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_ELC_AFR',30.8*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_ELC_AFR',0.00,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_ELC_OEE',185.0*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_ELC_OEE',216.0*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_ELC_OEE',0.00,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_ELC_RUS',123.0*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_ELC_RUS',144.0*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_ELC_RUS',0.00,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_ELC_MEA',39.5*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_ELC_MEA',59.2*0.95,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_ELC_MEA',0.00,'','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_USA',281.869,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_CAN',45.454,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_MEX',573.543,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_OLA',1121.453,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_BRA',513.146,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_RUS',18141.907,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_MEA',8810.889,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_AFR',7942.354,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_CHI',5.683,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_JPN',7.582,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_ODA',346.636,'PJ','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_USA',39000.935*7.46E-03*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_CAN',39000.935*1.20E-03*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_MEX',39000.935*1.52E-02*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_OLA',39000.935*2.97E-02*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_BRA',39000.935*1.36E-02*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_RUS',39000.935*4.80E-01*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_MEA',39000.935*2.33E-01*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_AFR',39000.935*2.10E-01*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_CHI',39000.935*1.50E-04*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_JPN',39000.935*2.01E-04*0.95,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_ODA',39000.935*9.17E-03*0.95,'PJ','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_USA',456.966,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_CAN',31.521,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_MEX',397.738,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_OLA',1166.519,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_BRA',533.781,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_RUS',18571.906,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_MEA',6480.449,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_AFR',6448.197,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_CHI',3.941,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_JPN',15.765,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_ODA',240.384,'PJ','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_USA',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_CAN',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_MEX',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_OLA',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_BRA',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_RUS',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_MEA',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_AFR',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_CHI',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_JPN',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_ODA',0.00,'PJ','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_AFR',5985.581*0.103,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_AFR',6219.416*0.098,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_AFR',3835.112*0.023,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_AUS',5985.581*0.098,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_AUS',6219.416*0.133,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_AUS',3835.112*0.151,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_CAC',5985.581*0.004,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_CAC',6219.416*0.006,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_CAC',3835.112*0.020,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_CAN',5985.581*0.027,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_CAN',6219.416*0.019,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_CAN',3835.112*0.026,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_ODA',5985.581*0.065,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_ODA',6219.416*0.050,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_ODA',3835.112*0.001,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_OEE',5985.581*0.027,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_OEE',6219.416*0.003,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_OEE',3835.112*0.000,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_OLA',5985.581*0.220,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_OLA',6219.416*0.230,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_OLA',3835.112*0.060,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_RUS',5985.581*0.260,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_RUS',6219.416*0.314,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_RUS',3835.112*0.549,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_USA',5985.581*0.196,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_USA',6219.416*0.147,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_USA',3835.112*0.170,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_AFR',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_AUS',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_CAC',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_CAN',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_ODA',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_OEE',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_OLA',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_RUS',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_USA',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
-
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_AFR',1633.180*0.99,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_AFR',1783.462*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_AFR',1406.800*0.99,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_AFR',0.0,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_RUS',13298.229*0.99,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_RUS',14462.654*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_RUS',13449.259*0.99,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_RUS',0.0,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_CAC',25.000*0.99,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_CAC',27.300*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_CAC',281.360*0.99,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_CAC',0.0,'','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_AFR',1589.52*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_AFR',544.43*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_AFR',1010.68*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_AFR',0.0,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_OLA',209.55*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_OLA',99.88*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_OLA',181.99*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_OLA',0.0,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_MEA',1394.83*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_MEA',920.75*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_MEA',988.55*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_MEA',0.0*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_GLB',294.06*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_GLB',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_USA',835.91*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_USA',0.00,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_RUS',568.11*0.99,'PJ','');
-INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_RUS',0.00,'PJ','');
---Electricity sector
----- Base year technologies
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_OIL_E',38.594*31.536*0.5*0.30,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2040,'ELC_OIL_E',38.594*31.536*0.000*0.30,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_NGA_E',185.139*31.536*0.5*0.35,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_NGA_E',185.139*31.536*0.000*0.35,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_COA_E',230.98*31.536*0.5*0.40,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_COA_E',230.98*31.536*0.000*0.40,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_BIO_E',13.940*31.536*0.5*0.50,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_BIO_E',13.940*31.536*0.000*0.50,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_HYD_GEN_E',134.758*31.536*0.5*0.50,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2045,'ELC_HYD_GEN_E',134.758*31.536*0.00*0.50,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_HYD_PUM_E',53.209*31.536*0.50*0.25,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2055,'ELC_HYD_PUM_E',53.209*31.536*0.00*0.25,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_NUC_FIS_E',3588.595*0.8,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2015,'ELC_NUC_FIS_E',3071.109*0.8,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2020,'ELC_NUC_FIS_E',2626.999*0.8,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2050,'ELC_NUC_FIS_E',0,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_GEO_E',0.900*31.536*0.9*0.85,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2045,'ELC_GEO_E',0.900*31.536*0.0*0.85,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_WIN_E',0.5*71.613*3.6,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2030,'ELC_WIN_E',0.5*71.613*3.6,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_SOL_E',0.5*1.487*3.6,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2030,'ELC_SOL_E',0.5*1.487*3.6,'','');
-
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_OIL_E',0.5*262.45*0.82,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_OIL_E',0.0*262.45*0.82,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_NGA_E',0.5*2174.25*0.74,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_NGA_E',0.0*2174.25*0.74,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_COA_E',0.5*854.46*0.92,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_COA_E',0.0*854.46*0.92,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_BIO_E',0.5*(226.767+45.917)*0.74,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_BIO_E',0.0*(226.767+45.917)*0.74,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_GEO_E',0.5*23.81*0.85,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_GEO_E',0.0*23.81*0.85,'','');
-
---INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_OIL_E',0.5*262.45*0.31,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_OIL_E',0.0*262.45*0.31,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_NGA_E',0.5*2174.25*0.21,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_NGA_E',0.0*2174.25*0.21,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_COA_E',0.5*854.46*0.16,'','');
---INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_COA_E',0.0*854.46*0.16,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_BIO_E',0.5*(226.767+45.917)*0.38,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_BIO_E',0.0*(226.767+45.917)*0.38,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_GEO_E',0.5*23.81*0.21,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_GEO_E',0.0*23.81*0.21,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_SOL_E',0.5*0.055,'','');
-INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_SOL_E',0.0*0.055,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_ELC_AFR',26.4*0.95,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_ELC_AFR',30.8*0.95,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_ELC_AFR',0.00,'','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_USA',281.869,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_CAN',45.454,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_MEX',573.543,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_OLA',1121.453,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_BRA',513.146,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_MEA',8810.889,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_AFR',7942.354,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_CHI',5.683,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_OIL_ODA',346.636,'PJ','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_USA',39000.935*7.46E-03*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_CAN',39000.935*1.20E-03*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_MEX',39000.935*1.52E-02*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_OLA',39000.935*2.97E-02*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_BRA',39000.935*1.36E-02*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_MEA',39000.935*2.33E-01*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_AFR',39000.935*2.10E-01*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_CHI',39000.935*1.50E-04*0.95,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_OIL_ODA',39000.935*9.17E-03*0.95,'PJ','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_USA',456.966,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_CAN',31.521,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_MEX',397.738,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_OLA',1166.519,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_BRA',533.781,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_MEA',6480.449,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_AFR',6448.197,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_CHI',3.941,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_OIL_ODA',240.384,'PJ','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_USA',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_CAN',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_MEX',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_OLA',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_BRA',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_MEA',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_AFR',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_CHI',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_OIL_ODA',0.00,'PJ','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_AFR',5985.581*0.103,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_AFR',6219.416*0.098,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_AFR',3835.112*0.023,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_AUS',5985.581*0.098,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_AUS',6219.416*0.133,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_AUS',3835.112*0.151,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_CAC',5985.581*0.004,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_CAC',6219.416*0.006,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_CAC',3835.112*0.020,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_CAN',5985.581*0.027,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_CAN',6219.416*0.019,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_CAN',3835.112*0.026,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_ODA',5985.581*0.065,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_ODA',6219.416*0.050,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_ODA',3835.112*0.001,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_OEE',5985.581*0.027,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_OEE',6219.416*0.003,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_OEE',3835.112*0.000,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_OLA',5985.581*0.220,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_OLA',6219.416*0.230,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_OLA',3835.112*0.060,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_RUS',5985.581*0.260,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_RUS',6219.416*0.314,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_RUS',3835.112*0.549,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_COA_USA',5985.581*0.196,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_COA_USA',6219.416*0.147,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_COA_USA',3835.112*0.170,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_AFR',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_AUS',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_CAC',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_CAN',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_ODA',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_OEE',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_OLA',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_RUS',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_COA_USA',0.0,'PJ','https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Coal_production_and_consumption_statistics');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_PIP_AFR',1633.180*0.99,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_PIP_AFR',1783.462*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_PIP_AFR',1406.800*0.99,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_PIP_AFR',0.0,'','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_AFR',1589.52*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_AFR',544.43*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_AFR',1010.68*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_AFR',0.0,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_OLA',209.55*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_OLA',99.88*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_OLA',181.99*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_OLA',0.0,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_MEA',1394.83*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_MEA',920.75*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_MEA',988.55*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_MEA',0.0*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_GAS_LNG_GLB',294.06*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'UPS_IMP_GAS_LNG_GLB',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_USA',835.91*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_USA',0.00,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_GAS_LNG_RUS',568.11*0.99,'PJ','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2025,'UPS_IMP_GAS_LNG_RUS',0.00,'PJ','');
+-- --Electricity sector
+-- ---- Base year technologies
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_OIL_E',38.594*31.536*0.5*0.30,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2040,'ELC_OIL_E',38.594*31.536*0.000*0.30,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_NGA_E',185.139*31.536*0.5*0.35,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_NGA_E',185.139*31.536*0.000*0.35,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_COA_E',230.98*31.536*0.5*0.40,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_COA_E',230.98*31.536*0.000*0.40,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_BIO_E',13.940*31.536*0.5*0.50,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_BIO_E',13.940*31.536*0.000*0.50,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_HYD_GEN_E',134.758*31.536*0.5*0.50,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2045,'ELC_HYD_GEN_E',134.758*31.536*0.00*0.50,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_HYD_PUM_E',53.209*31.536*0.50*0.25,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2055,'ELC_HYD_PUM_E',53.209*31.536*0.00*0.25,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_NUC_FIS_E',3588.595*0.8,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2015,'ELC_NUC_FIS_E',3071.109*0.8,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2020,'ELC_NUC_FIS_E',2626.999*0.8,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2050,'ELC_NUC_FIS_E',0,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_GEO_E',0.900*31.536*0.9*0.85,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2045,'ELC_GEO_E',0.900*31.536*0.0*0.85,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_WIN_E',0.5*71.613*3.6,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2030,'ELC_WIN_E',0.5*71.613*3.6,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_SOL_E',0.5*1.487*3.6,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2030,'ELC_SOL_E',0.5*1.487*3.6,'','');
+-- 
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_OIL_E',0.5*262.45*0.82,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_OIL_E',0.0*262.45*0.82,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_NGA_E',0.5*2174.25*0.74,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_NGA_E',0.0*2174.25*0.74,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_COA_E',0.5*854.46*0.92,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_COA_E',0.0*854.46*0.92,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_BIO_E',0.5*(226.767+45.917)*0.74,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_BIO_E',0.0*(226.767+45.917)*0.74,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'ELC_CHP_GEO_E',0.5*23.81*0.85,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2035,'ELC_CHP_GEO_E',0.0*23.81*0.85,'','');
+-- 
+-- --INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_OIL_E',0.5*262.45*0.31,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_OIL_E',0.0*262.45*0.31,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_NGA_E',0.5*2174.25*0.21,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_NGA_E',0.0*2174.25*0.21,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_COA_E',0.5*854.46*0.16,'','');
+-- --INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_COA_E',0.0*854.46*0.16,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_BIO_E',0.5*(226.767+45.917)*0.38,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_BIO_E',0.0*(226.767+45.917)*0.38,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_GEO_E',0.5*23.81*0.21,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_GEO_E',0.0*23.81*0.21,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2010,'HET_SOL_E',0.5*0.055,'','');
+-- INSERT INTO "MinActivity" VALUES ('EU',2040,'HET_SOL_E',0.0*0.055,'','');
 
 --INSERT INTO "MinActivity" VALUES ('EU',2010,'UPS_IMP_BIO_WOD',283.0,'PJ','10.5281/zenodo.3544900');
 --INSERT INTO "MinActivity" VALUES ('EU',2020,'UPS_IMP_BIO_WOD',283.0,'PJ','10.5281/zenodo.3544900');
@@ -8110,35 +7568,6 @@ INSERT INTO "MaterialIntensity" VALUES ('EU','MOL','CCUS_ELC_NGA',2020,7.50E+00,
 INSERT INTO "MaterialIntensity" VALUES ('EU','NIC','CCUS_ELC_NGA',2020,1.15E+03,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('EU','NIO','CCUS_ELC_NGA',2020,1.00E+02,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('EU','VAN','CCUS_ELC_NGA',2020,1.00E+02,'t/GW','10.1016/j.mtener.2025.101805');
--- Industrial
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','IND_CHP_NGA_CI_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_NGA_CI_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','IND_CHP_NGA_CI_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','IND_CHP_NGA_TG_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_NGA_TG_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','IND_CHP_NGA_TG_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','IND_CHP_NGA_TV_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_NGA_TV_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','IND_CHP_NGA_TV_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','IND_CHP_BLQ_CI_N',2007,2.27E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','TIT','IND_CHP_BLQ_CI_N',2007,4.00E+02,'t/GW','10.1016/j.mtener.2025.101805');
--- Residential
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_CI_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_CI_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_CI_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_MICRO_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_MICRO_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_MICRO_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_CC_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_CC_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_CC_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','CHR','RES_CHP_NGA_STR_N',2007,4.83E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','COP','RES_CHP_NGA_STR_N',2007,1.10E+03,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_STR_N',2007,1.58E+01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','NIC','RES_CHP_NGA_SOFC_N',2020,6.80E+00,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','LAN','RES_CHP_NGA_SOFC_N',2020,1.00E+00,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','YTT','RES_CHP_NGA_SOFC_N',2020,1.28E-01,'t/GW','10.1016/j.mtener.2025.101805');
-INSERT INTO "MaterialIntensity" VALUES ('IT','ZIR','RES_CHP_NGA_SOFC_N',2020,1.79E+00,'t/GW','10.1016/j.mtener.2025.101805');
 
 CREATE TABLE "Output_V_Capacity" (
 	"regions"	text,
